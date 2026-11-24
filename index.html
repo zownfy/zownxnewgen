@@ -123,9 +123,9 @@ footer{padding:34px 6vw;border-top:1px solid var(--ln);display:flex;justify-cont
 <script>
 /* ====== EDIT HERE: download link, version and update time ====== */
 const CFG={
- DOWNLOAD_URL:'%23zownxnewgenV1.2.1.jar',      // direct jar link (file sits next to index.html) or paste any full link
- REPO:'zownfy/zownxnewgen',                 // public GitHub repo: newest .jar/.zip is picked AUTOMATICALLY (name, version, time)
- VERSION:'v1.2.1',                          // shown in hero + download button
+ DOWNLOAD_URL:'/download',      // direct jar link (file sits next to index.html) or paste any full link
+ REPO:'',                 // public GitHub repo: newest .jar/.zip is picked AUTOMATICALLY (name, version, time)
+ VERSION:'',                          // shown in hero + download button
  UPDATED_AT:'2026-11-24T12:00:00Z'          // set this when you release an update (ISO date-time)
 };
 /* =============================================================== */
@@ -183,8 +183,13 @@ document.addEventListener('pointerout',e=>{const m=e.target.closest&&e.target.cl
 $('#ver').textContent=CFG.VERSION;$('#dl').textContent='Download Zownium Newgen '+CFG.VERSION;
 {const a=$('#dl'),u=CFG.DOWNLOAD_URL;a.href=u;if(/\.(jar|zip)(\?|$)/i.test(u))a.setAttribute('download','');else if(/^https?:/.test(u)){a.target='_blank';a.rel='noopener'}}
 const rel=t=>{const s=Math.max(0,(Date.now()-t)/1e3);if(s<60)return'just now';const m=s/60;if(m<60)return Math.floor(m)+' min ago';const h=m/60;if(h<24)return Math.floor(h)+' hr ago';const d=h/24;if(d<30)return Math.floor(d)+' days ago';return new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})};
-function upd(){const t=new Date(CFG.UPDATED_AT);$('#ut').textContent='Latest build '+CFG.VERSION+' · Updated '+rel(t);$('#upd').title=t.toLocaleString()}
+function upd(){const t=new Date(CFG.UPDATED_AT);$('#ut').textContent=(CFG.VERSION?'Latest build '+CFG.VERSION:'Latest build')+' · Updated '+rel(t);$('#upd').title=t.toLocaleString()}
 upd();setInterval(upd,30000);
+/* update time = when zownium.jar was last uploaded to the site (hidden if the host does not report it) */
+$('#upd').style.display='none';
+$$('a.btn.p').forEach(a=>{if(/download/i.test(a.textContent)){a.href='/download';a.setAttribute('download','')}});
+const sync=()=>fetch('/api/latest',{cache:'no-store'}).then(r=>r.json()).then(l=>{if(!l)return;CFG.UPDATED_AT=l.date;const v=l.name.match(/v?(\d+(?:[._]\d+)+)/i);CFG.VERSION=v?'v'+v[1].replace(/_/g,'.'):'';$('#ver').textContent=CFG.VERSION;$('#dl').textContent='Download Zownium Newgen '+CFG.VERSION;upd();$('#upd').style.display=''}).catch(()=>{});
+sync();setInterval(sync,120000);
 /* AUTO LATEST: reads the newest .jar/.zip from the public GitHub repo, nothing to edit */
 (async()=>{const R=CFG.REPO;if(!R)return;try{let c=null;try{c=JSON.parse(sessionStorage.getItem('zl'))}catch(e){}
 if(!c||Date.now()-c.t>3e5){const f=await(await fetch(`https://api.github.com/repos/${R}/contents/`)).json();
