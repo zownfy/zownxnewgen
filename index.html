@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050506">
+<link rel="canonical" href="https://zown.lol">
+<meta property="og:url" content="https://zown.lol"><meta property="og:title" content="Zownium Newgen · Developed by Zown"><meta property="og:description" content="Zownium Newgen: the Nethpot client for Minecraft 1.21.1 Fabric. Developed by Zown.">
+<title>Zownium Newgen · Developed by Zown</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--a1:#8b6cff;--a2:#38d9ff;--a3:#ff7ad9;--a4:#ffc66b;--bg:#050506;--fg:#f5f5f7;--mut:#8f8f99;--ln:rgba(255,255,255,.09);--e:cubic-bezier(.16,1,.3,1);--ir:linear-gradient(100deg,var(--a1),var(--a2),var(--a3),var(--a4),var(--a1));color-scheme:dark}
+*{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.55 'Inter Tight',system-ui,-apple-system,sans-serif;overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 70px)}
+.ir{background:var(--ir) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fw 7s linear infinite}
+.off,.off *{animation-play-state:paused!important}
+@keyframes fw{to{background-position:-300% 0}}@keyframes spin{to{transform:rotate(360deg)}}
+.amb{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.amb i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--k) 34%,transparent),transparent);will-change:transform;animation:fl 28s ease-in-out infinite alternate}
+.amb::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--ln) 1px,transparent 1px) 0 0/84px 84px,linear-gradient(90deg,var(--ln) 1px,transparent 1px) 0 0/84px 84px;-webkit-mask:radial-gradient(70% 55% at 50% 25%,#000,transparent);mask:radial-gradient(70% 55% at 50% 25%,#000,transparent);opacity:.38}
+@keyframes fl{to{transform:translate3d(10vw,8vh,0) scale(1.18)}}
+#pg{position:fixed;top:0;left:0;right:0;height:2px;background:var(--ir);transform-origin:0 50%;transform:scaleX(0);z-index:90}
+section{padding:12vh 6vw;position:relative}
+h2{font-weight:600;font-size:clamp(2rem,5.4vw,4.2rem);letter-spacing:-.045em;line-height:1.04;text-align:center}
+.eb{display:block;text-align:center;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);margin-bottom:18px}
+.sub{max-width:620px;margin:22px auto 0;color:var(--mut);text-align:center;font-size:clamp(1rem,1.6vw,1.15rem)}
+.gl{position:relative;border:1px solid rgba(255,255,255,.12);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 20px 60px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(255,255,255,.04)}
+nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 16px;border-radius:99px;max-width:94vw}
+.logo{display:flex;gap:9px;align-items:center;font-weight:700;font-size:18px;letter-spacing:-.03em;color:var(--fg);text-decoration:none;margin-right:6px}
+.logo i,.dev i{width:28px;height:28px;border-radius:9px;background:#fff;color:#000;display:grid;place-items:center;font-style:normal;font-weight:800;box-shadow:0 0 24px color-mix(in srgb,var(--a2) 60%,#fff)}
+.lk{position:relative;display:flex}.lk a{position:relative;z-index:1;padding:9px 15px;color:var(--mut);text-decoration:none;font-size:14px;transition:color .3s}.lk a.a,.lk a:hover{color:#fff}
+.ind{position:absolute;top:0;bottom:0;left:0;width:0;border-radius:99px;background:rgba(255,255,255,.11);box-shadow:inset 0 1px 0 rgba(255,255,255,.16);opacity:0;transition:left .6s cubic-bezier(.34,1.45,.64,1),width .6s cubic-bezier(.34,1.45,.64,1),opacity .3s}
+.btn{position:relative;display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:99px;border:1px solid var(--ln);background:rgba(255,255,255,.06);color:var(--fg);font:500 15px/1 'Inter Tight',system-ui,sans-serif;text-decoration:none;isolation:isolate;transition:transform .5s var(--e),background .3s}
+.btn:hover{background:rgba(255,255,255,.12)}.sm{padding:11px 20px;font-size:14px}
+.btn.p{background:#fff;color:#000;border-color:#fff;box-shadow:0 0 50px color-mix(in srgb,var(--a2) 35%,transparent)}.btn.p:hover{background:#ececf0}
+.btn.g{overflow:hidden;border:0;background:none}.btn.g::before{content:"";position:absolute;inset:-160%;z-index:-2;background:conic-gradient(from 0deg,transparent 0 66%,var(--a1),var(--a2),var(--a3),transparent);animation:spin 3.2s linear infinite}
+.btn.g::after{content:"";position:absolute;inset:1px;border-radius:inherit;background:#0b0b0e;z-index:-1}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16vh 5vw 6vh;overflow:hidden;text-align:center}
+.orb{position:absolute;left:50%;top:30%;width:min(110vw,1000px);aspect-ratio:1;margin-left:calc(min(110vw,1000px)/-2);pointer-events:none;opacity:.32}
+.orb::before,.orb::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--a1),var(--a2),var(--a3),var(--a4),var(--a1));-webkit-mask:radial-gradient(closest-side,transparent 56%,#000 62%,transparent 72%);mask:radial-gradient(closest-side,transparent 56%,#000 62%,transparent 72%);will-change:transform;animation:spin 24s linear infinite}
+.orb::after{inset:10%;opacity:.5;animation-duration:36s;animation-direction:reverse}
+.hi{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.tag{display:inline-flex;gap:10px;align-items:center;padding:8px 16px;border-radius:99px;font-size:13px;color:#cfcfd6;margin-bottom:26px;animation:rv .9s var(--e) backwards}
+.tag b{width:7px;height:7px;border-radius:50%;background:#7dffb5;box-shadow:0 0 12px #7dffb5}
+h1{font-weight:600;font-size:clamp(2.5rem,8.2vw,6.8rem);letter-spacing:-.05em;line-height:1.02}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .03em .16em;margin-right:.2em}.w>i{display:inline-block;font-style:normal;transform:translateY(112%);animation:up 1.2s var(--e) calc(var(--n)*85ms + 250ms) forwards}
+.w>i.ir{animation:up 1.2s var(--e) calc(var(--n)*85ms + 250ms) forwards,fw 7s linear infinite}
+@keyframes up{to{transform:none}}
+.hi .sub,.cta{animation:rv 1s var(--e) .9s backwards}.cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px;animation-delay:1.1s}
+@keyframes rv{from{opacity:0;transform:translateY(36px) scale(.97)}}
+.wmw{position:relative;z-index:1;margin-top:6vh;perspective:1000px;filter:drop-shadow(0 10px 60px color-mix(in srgb,var(--a1) 40%,transparent))}
+.wm{display:flex;justify-content:center;font-weight:800;font-size:clamp(5rem,23vw,20rem);letter-spacing:-.06em;line-height:.88;user-select:none;transition:transform .8s var(--e)}
+.wm i{font-style:normal;display:inline-block;background:linear-gradient(180deg,#fff 8%,#b4b4c0 55%,#4a4a56);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;padding:0 .02em;transform:translateY(45%) rotateX(-75deg);animation:rise 1.5s var(--e) calc(var(--n)*120ms + 800ms) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.dev{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;margin-top:3vh;padding:9px 18px 9px 10px;border-radius:99px;color:var(--mut);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.dev b{color:#fff;font-weight:600}
+.mq{overflow:hidden;padding:10px 0;-webkit-mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mr{display:flex;gap:12px;width:max-content;margin-bottom:12px;animation:mq 55s linear infinite;will-change:transform}.mr.r{animation-direction:reverse}.mq:hover .mr{animation-play-state:paused}
+.mr span{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:99px;border:1px solid var(--ln);background:rgba(255,255,255,.04);color:#d8d8de;font-size:14px;white-space:nowrap}.mr b,.cat h3 b,.t b{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c);transition:background .6s}
+@keyframes mq{to{transform:translateX(-50%)}}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;max-width:1100px;margin:0 auto}
+.st div,.c{border-radius:24px;padding:28px;background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.015));border:1px solid var(--ln)}.st div{text-align:center}
+.st strong{display:block;font-size:clamp(2.4rem,5.4vw,3.8rem);font-weight:600;letter-spacing:-.05em;line-height:1.1}.st span{color:var(--mut);font-size:14px}
+.ico{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.35),color-mix(in srgb,var(--c) 40%,transparent) 60%);border:1px solid rgba(255,255,255,.25);box-shadow:0 0 40px color-mix(in srgb,var(--c) 55%,transparent),inset 0 1px 0 rgba(255,255,255,.4)}.ico svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.t{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bdbdc6}
+.ch{display:flex;flex-wrap:wrap;gap:8px}.ch span,.more span{font-size:13px;padding:7px 14px;border-radius:99px;border:1px solid var(--ln);color:#d0d0d6;background:rgba(255,255,255,.04)}
+.more{max-width:1220px;margin:20px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;color:var(--mut);font-size:14px}
+.win{max-width:940px;margin:56px auto 0;border-radius:30px;overflow:hidden;display:grid;grid-template-columns:210px 1fr;box-shadow:0 60px 160px color-mix(in srgb,var(--a1) 22%,transparent),inset 0 1px 0 rgba(255,255,255,.14)}
+.sb{padding:20px 16px;border-right:1px solid var(--ln);display:flex;flex-direction:column;gap:6px}.sb p{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);padding:2px 12px 12px}
+.tb{all:unset;box-sizing:border-box;padding:11px 14px;border-radius:14px;cursor:pointer;color:var(--mut);font-size:15px;transition:background .4s,color .3s}.tb:hover{color:#fff}.tb.a{background:rgba(255,255,255,.11);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.ml{padding:12px}.m{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;cursor:pointer;user-select:none;transition:background .3s;animation:rv .7s var(--e) calc(var(--i)*55ms) backwards}.m:hover{background:rgba(255,255,255,.05)}.m b{font-weight:500}
+.sw{width:46px;height:27px;flex:none;border-radius:99px;background:#24242b;position:relative;transition:background .4s,box-shadow .4s}.sw::after{content:"";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#85858f;transition:transform .6s cubic-bezier(.34,1.56,.64,1),background .3s}
+.m.on .sw{background:var(--ir) 0 0/300% 100%;animation:fw 5s linear infinite;box-shadow:0 0 24px color-mix(in srgb,var(--a1) 60%,transparent)}.m.on .sw::after{transform:translateX(19px);background:#fff}
+.cats,.grid{display:grid;gap:14px;max-width:1180px;margin:56px auto 0;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cat{border-radius:24px;padding:26px;border:1px solid var(--ln);background:rgba(255,255,255,.025)}.cat h3{font-weight:600;font-size:1.1rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.c{position:relative;overflow:hidden;isolation:isolate;transition:transform .6s var(--e)}.c::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .6s;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 28%,transparent),transparent 65%)}.c:hover{transform:translateY(-6px)}.c:hover::before{opacity:1}
+.c .t{margin-bottom:10px}.c .ch{margin-top:16px}.c .ico{width:52px;height:52px;border-radius:16px;margin-bottom:18px}.c .ico svg{width:24px;height:24px}.c h3{font-weight:600;font-size:1.25rem;letter-spacing:-.02em;margin-bottom:8px}.c p{color:var(--mut);font-size:15px}
+.fin{text-align:center;padding-bottom:9vh;overflow:hidden}.fin::before{content:"";position:absolute;left:50%;top:15%;width:90vmin;height:90vmin;margin-left:-45vmin;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--a1) 30%,transparent),color-mix(in srgb,var(--a2) 10%,transparent) 60%,transparent);pointer-events:none}
+.wm2{position:relative;font-weight:800;letter-spacing:-.06em;line-height:.9;font-size:clamp(5rem,24vw,21rem);background:linear-gradient(180deg,#fff 8%,#b4b4c0 55%,#4a4a56);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:3vh}
+.fin .cta{position:relative}.req{position:relative;color:var(--mut);font-size:14px;margin:26px 0 30px}
+footer{padding:34px 6vw;border-top:1px solid var(--ln);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--mut);font-size:14px}footer b{color:#fff;font-weight:600}
+.dock{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:6px;padding:7px 8px 7px 16px;border-radius:99px;font-size:12px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase}
+.dock button{all:unset;box-sizing:border-box;width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;background-clip:padding-box;position:relative;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}.dock button:hover{transform:scale(1.15)}.dock button.a{box-shadow:0 0 0 2px #fff,0 0 20px var(--s1)}
+.rv{opacity:0}.rv.in{opacity:1;animation:rv .95s var(--e) calc(var(--i,0)*70ms) backwards}
+@supports(animation-timeline:scroll()){#pg{animation:pgp linear both;animation-timeline:scroll()}@keyframes pgp{to{transform:scaleX(1)}}
+.hi{animation:hf linear both;animation-timeline:view();animation-range:exit 5% exit 85%}@keyframes hf{to{opacity:0;transform:translateY(-7vh) scale(.94)}}}
+@media(max-width:760px){.lk{display:none}section{padding:10vh 5vw}.win{grid-template-columns:1fr}.sb{flex-direction:row;overflow:auto;border-right:0;border-bottom:1px solid var(--ln)}.sb p{display:none}.tb{white-space:nowrap}.dock span{display:none}.dock{padding-left:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important;scroll-behavior:auto!important}}
+</style></head><body>
+<div class="amb"><i style="left:-18vmax;top:-22vmax;--k:var(--a1)"></i><i style="right:-24vmax;top:4vh;--k:var(--a2);animation-delay:-9s"></i><i style="left:18vw;bottom:-38vmax;--k:var(--a3);animation-delay:-17s"></i></div>
+<div id="pg"></div>
+<nav class="gl"><a class="logo" href="#top"><i>Z</i>Zown</a>
+<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
+<a class="btn p sm mag" href="#get">Download</a></nav>
+<div class="dock gl"><span>Theme</span><div id="dk" style="display:flex;gap:6px"></div></div>
+<main>
+<section class="hero" id="top"><div class="orb"></div>
+<div class="hi"><div class="tag gl"><b></b>Zownium Newgen v1.2.0 · Fabric 1.21.1</div>
+<h1 data-s="Play beyond limits."></h1>
+<p class="sub">A full Nethpot suite, instant refillers, mace tools, a liquid glass GUI and performance modules that keep every fight smooth.</p>
+<div class="cta"><a class="btn p mag" href="#get">Download Zownium</a><a class="btn g mag" href="#nethpot">Explore Nethpot</a></div></div>
+<div class="wmw"><div class="wm" id="wm" aria-label="Zown"></div></div>
+<div class="dev gl"><i>Z</i>Developed by <b>Zown</b></div></section>
+<div class="mq"><div class="mr" id="m1"></div><div class="mr r" id="m2"></div></div>
+<section><div class="st"><div class="rv"><strong class="ir">100+</strong><span>Modules</span></div><div class="rv" style="--i:1"><strong class="ir">11</strong><span>Categories</span></div><div class="rv" style="--i:2"><strong class="ir">20</strong><span>Appearance presets</span></div><div class="rv" style="--i:3"><strong class="ir">1.21.1</strong><span>Fabric</span></div></div></section>
+<section id="nethpot"><span class="eb rv">Nethpot tab</span><h2 class="rv">Built for <span class="ir">Nethpot.</span></h2>
+<p class="sub rv">Triggers, potions, refillers, totems and movement, tuned for Nethpot fights. Here is exactly what each module does.</p>
+<div class="grid" id="np"></div>
+<div class="more rv" id="mo"><span style="border:0;background:none">Also in Nethpot</span></div></section>
+<section id="gui"><span class="eb rv">Live preview</span><h2 class="rv">Liquid glass <span class="ir">GUI.</span></h2>
+<p class="sub rv">Pick a tab and toggle modules. This is how it feels in game.</p>
+<div class="win gl rv"><div class="sb" id="sb"><p>Zownium</p></div><div class="ml" id="ml"></div></div></section>
+<section id="modules"><span class="eb rv">Everything else</span><h2 class="rv">One client. <span class="ir">Every category.</span></h2><div class="cats" id="ct"></div></section>
+<section id="studio"><span class="eb rv">Make it yours</span><h2 class="rv">Your look. <span class="ir">Your client.</span></h2>
+<p class="sub rv">Pure black and white or full colour. Glass, glow and blur are adjustable and saved per profile.</p>
+<div class="grid" id="sd"></div></section>
+<section class="fin" id="get"><div class="wm2 rv">Zown</div><h2 class="rv">Ready to <span class="ir">play beyond?</span></h2>
+<p class="req rv">Minecraft 1.21.1 · Fabric Loader · Fabric API · Java 21</p>
+<div class="cta rv"><a class="btn p mag" href="https://zown.lol">Download Zownium Newgen v1.2.0</a><a class="btn g mag" href="#nethpot">See Nethpot modules</a></div>
+<div class="dev gl rv" style="margin-top:36px"><i>Z</i>Developed by <b>Zown</b></div></section>
+</main>
+<footer><span>© 2026 <b>Zown</b> · <a href="https://zown.lol" style="color:inherit">zown.lol</a></span><span>Developed by <b>Zown</b></span></footer>
+<script>
+const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+const IC={trig:'<circle cx="12" cy="12" r="6"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/>',bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',pot:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 14h8"/>',star:'<path d="m12 3 2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"/>',refill:'<path d="M20 11a8 8 0 0 0-14-4M4 5v4h4M4 13a8 8 0 0 0 14 4M20 19v-4h-4"/>',inv:'<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><path d="M16.5 13v7M13 16.5h7"/>',flame:'<path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/>',kb:'<path d="M4 20l6-6 4 4 6-8M15 10h5v5"/>',sprint:'<path d="M6 5l7 7-7 7M12 5l7 7-7 7"/>',pal:'<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 1.5-2-.6-1.2.2-2.5 1.5-2.5H17a4 4 0 0 0 4-4c0-5-4-9.5-9-9.5z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="11" r="1"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',layers:'<path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/>',wave:'<path d="M2 12c3-7 5-7 8 0s5 7 8 0 3-4 4-2"/>'};
+const NP=[
+['Goated Trigger Bot','trig','Combat','A trigger bot that behaves like a person. Reaction time is a mean plus a spread, hits wait for full charge, and it can hit-select, skip shields and respect your max reach. Mistake chance and follow-up jitter keep patterns natural.',['Reaction mean/spread','Max Reach','Crit Mode','Shield Mode','Only Mouse Hold']],
+['Pika Tbot','bolt','Combat','Fast, configurable auto attack the moment your crosshair is on a target. Separate sword and axe thresholds, min/max reaction time, crit and perfect-crit preference, and it can ignore shields, passives, crystals and invisible targets.',['Sword/Axe thresholds','Reaction Time','Prefer Crits','Perfect Crits','Ignore Shields']],
+['Throw Pot v2','pot','Potions','Instant health pot throws on a key or by health. Set thresholds for normal, low and critical HP, multi-throw several pots, look down, then rotate back to your exact pre-throw yaw. Auto switch back returns your weapon.',['Throw Key','Health Threshold','Multi Throw','Restore Yaw','Auto Switch Back']],
+['Throw Buff','star','Potions','Speed, Strength, Fire Resistance and Regeneration pots on one key. Only-if-missing and refresh-below timers stop wasted pots. It looks down, throws, rotates back and switches to your weapon again.',['Speed / Strength','Fire Res / Regen','Only If Missing','Refresh Below']],
+['All Refiller','refill','Refill','One key puts everything back: sword, totem, health pots, XP and buffs refill into your hotbar instantly. Every slot is a slider, wrong items can be replaced, and it falls back to a health pot when there is no totem or XP.',['Refill Key','Sword/Totem Slot','Health Slots','Buff Slots','Replace Wrong Items']],
+['Pot Refill','inv','Refill','Moves health pots from your inventory into empty hotbar slots by itself, with its own delay. Keep-in-hotbar decides how many stay ready, and it can close the inventory after.',['Delay','Keep In Hotbar','Close Inventory After']],
+['Auto Buffs Refill','star','Refill','Refills Speed and Strength, plus Fire Res and Regen, into the hotbar slot you pick for each. Delay, replace-occupied and close-after options, and it can run only while your inventory is open.',['Slot per pot','Delay','Replace Occupied','Inventory Open']],
+['Flame Totem','flame','Defense','At low hearts a totem hits your offhand instantly, with damage prediction so it swaps before the hit that would kill you. After the pop or when healed, your offhand returns to gapple or shield.',['Trigger Hearts','Predict Damage','Restore Offhand','Gapple Fallback','Swap Method']],
+['KB Jump Assist','kb','Movement','A small hop right after you take knockback, then a falling punish-crit. Height, chance, delay and jitter are adjustable, and an optional sprint hit adds extra KB when the enemy is on top of you.',['Jump Height','Jump Chance','Hit Mode','Enemy Range','Re-Sprint']],
+['Sprint Optimizer','sprint','Movement','Keeps sprint alive in the air, after landing and after hits, and fixes sprint getting stuck on servers with a configurable stuck-tick check.',['Air Sprint','Landing Re-Sprint','Stuck Fix','Not In Water']]];
+const SD=[['Appearance Studio','pal','20 built-in looks, from Pure Black & White to Sunset. Tune colours, blur, borders, radius, glow, scale and spacing.'],['Theme Studio','drop','Build custom themes and change the whole client look in one click.'],['Client Profiles','layers','Switch setups instantly. Save, import and export every profile as JSON.'],['Animation Studio','wave','Fine-tune animation types and easing until the GUI feels alive.']];
+const CT=[['Combat','TriggerBot v2,Aim Assist,Weak Point Aim,Anti Miss,Velocity,Auto Jump Reset,Combo Break Escape,Block Hit Timing,Shield Breaker,WTap,STap,Sword Hotswap,Totem Hit'],['Mace','Auto Mace V2,Auto Pearl Catch,Pearl Catch V2,Wind Charge Jump,Breach Swap,Stun Slam V2,Mace Swap V2,Fall Cancel Pearl,Lunge Swap,Elytra HotSwap'],['Crystals','Auto Crystal,Key Crystal,Key Anchor'],['Movement','Sprint,Keep Sprint,Snap Tap,No Jump Delay,Auto Head Hitter,Auto Firework'],['Safety','Totem Warning,Pot Warning,Gap Warning,Item Warning,Low Health Alert,Auto Log'],['HUD','Armor HUD,Pot Counter,Item Counter,Health Indicator,Enemy Pattern Tracker,FPS Counter,Coords HUD'],['Player','Auto Tool,Fast Place,Fast Mine,Auto Crafter,Auto Web,Auto Extinguish,Fast Exp'],['Performance','FPS Boost,Perf Mode,Lag Guard,Render Optimizer,Particle Limiter,Fight Mode FPS,Dynamic FPS,Memory Cleaner,Motion Blur']];
+const GUI={Nethpot:'Goated Trigger Bot*,Pika Tbot,Throw Pot v2*,Flame Totem*,Auto Totem,Gap Assist,KB Jump Assist,Sprint Optimizer*',Combat:'Velocity*,Aim Assist,Weak Point Aim*,Combo Break Escape,Block Hit Timing,Anti Miss',Mace:'Auto Mace V2,Auto Pearl Catch*,Wind Charge Jump,Breach Swap*,Stun Slam V2,Lunge Swap',Render:'FPS Boost*,Perf Mode,Lag Guard*,Render Optimizer,Particle Limiter*,Motion Blur'};
+const TH={Aurora:['#8b6cff','#38d9ff','#ff7ad9','#ffc66b'],Sunset:['#ff5f6d','#ff9a5c','#ffd36b','#ff6bd6'],Emerald:['#2dffa0','#38e8ff','#b6ff5c','#4d8bff'],Mono:['#ffffff','#9a9aa6','#e6e6ee','#6b6b76']};
+const sv=n=>`<svg viewBox="0 0 24 24">${IC[n]}</svg>`,V=i=>`var(--a${i%4+1})`;
+$('#sd').innerHTML=SD.map((x,i)=>`<article class="c rv" style="--c:${V(i)};--i:${i}"><div class="ico">${sv(x[1])}</div><h3>${x[0]}</h3><p>${x[2]}</p></article>`).join('');
+$('#mo').innerHTML+=['Auto Totem','Gap Assist','Auto Shift Crit','Mend Helper v3','Effect Timers'].map(m=>`<span>${m}</span>`).join('');
+$('#ct').innerHTML=CT.map((x,i)=>`<div class="cat rv" style="--c:${V(i)};--i:${i%3}"><h3><b></b>${x[0]}</h3><div class="ch">${x[1].split(',').map(m=>`<span>${m}</span>`).join('')}</div></div>`).join('');
+const mn=NP.map((x,i)=>[x[0],i]).concat(CT.flatMap((c,j)=>c[1].split(',').slice(0,4).map((m,k)=>[m,j+k])));
+const row=a=>{const h=a.map(x=>`<span><b style="--c:${V(x[1])}"></b>${x[0]}</span>`).join('');return h+h};
+$('#m1').innerHTML=row(mn.filter((_,i)=>i%2==0));$('#m2').innerHTML=row(mn.filter((_,i)=>i%2==1));
+$('#wm').innerHTML='Zown'.split('').map((c,i)=>`<i style="--n:${i}">${c}</i>`).join('');
+$('h1').innerHTML=$('h1').dataset.s.split(' ').map((w,i)=>`<span class="w"><i class="${i>1?'ir':''}" style="--n:${i}">${w}</i></span>`).join(' ');
+$('#np').innerHTML=NP.map((m,i)=>`<article class="c rv" style="--c:${V(i)};--i:${i%3}"><div class="ico">${sv(m[1])}</div><span class="t"><b></b>${m[2]}</span><h3>${m[0]}</h3><p>${m[3]}</p><div class="ch">${m[4].map(c=>`<span>${c}</span>`).join('')}</div></article>`).join('');
+/* gui */
+const sb=$('#sb'),ml=$('#ml');let st={};
+Object.keys(GUI).forEach((k,i)=>{GUI[k].split(',').forEach(m=>st[k+m.replace('*','')]=m.endsWith('*'));const b=document.createElement('button');b.className='tb'+(i?'':' a');b.textContent=k;b.onclick=()=>{$$('.tb').forEach(x=>x.classList.remove('a'));b.classList.add('a');show(k)};sb.appendChild(b)});
+function show(k){ml.innerHTML=GUI[k].split(',').map((m,i)=>{m=m.replace('*','');return`<div class="m${st[k+m]?' on':''}" data-k="${k+m}" style="--i:${i}"><b>${m}</b><div class="sw"></div></div>`}).join('')}
+ml.onclick=e=>{const m=e.target.closest('.m');if(m){st[m.dataset.k]=!st[m.dataset.k];m.classList.toggle('on')}};show('Nethpot');
+/* themes */
+function theme(n){TH[n].forEach((c,i)=>document.documentElement.style.setProperty('--a'+(i+1),c));$$('#dk button').forEach(b=>b.classList.toggle('a',b.dataset.n==n));try{localStorage.setItem('zt',n)}catch(e){}}
+Object.keys(TH).forEach(n=>{const b=document.createElement('button');b.dataset.n=n;b.title=n;b.style.cssText=`background:conic-gradient(${TH[n].join(',')},${TH[n][0]});--s1:${TH[n][0]}`;b.onclick=()=>theme(n);$('#dk').appendChild(b)});
+let t0='Aurora';try{t0=localStorage.getItem('zt')||t0}catch(e){}theme(TH[t0]?t0:'Aurora');
+/* reveal, nav, flow pause */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});$$('.rv').forEach(e=>io.observe(e));
+const fo=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('off',!e.isIntersecting)));$$('.ir').forEach(e=>fo.observe(e));
+const lk=$('#lk'),ind=$('.ind'),ls=$$('a',lk);let act=null;
+const mv=a=>{if(a){ind.style.left=a.offsetLeft+'px';ind.style.width=a.offsetWidth+'px';ind.style.opacity=1}else ind.style.opacity=0};
+ls.forEach(a=>a.onmouseenter=()=>mv(a));lk.onmouseleave=()=>mv(act);
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){act=ls.find(a=>a.getAttribute('href')==='#'+e.target.id)||null;ls.forEach(a=>a.classList.toggle('a',a===act));mv(act)}}),{rootMargin:'-45% 0px -50% 0px'});$$('main section[id]').forEach(s=>so.observe(s));
+/* pointer fx */
+const wm=$('#wm');let q=0,px=0,py=0,pt=null;
+addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;px=e.clientX;py=e.clientY;pt=e.target;if(q)return;q=requestAnimationFrame(()=>{q=0;
+const c=pt.closest&&pt.closest('.c');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',px-r.left+'px');c.style.setProperty('--my',py-r.top+'px')}
+const m=pt.closest&&pt.closest('.mag');if(m){const r=m.getBoundingClientRect();m.style.transform=`translate(${(px-r.left-r.width/2)*.22}px,${(py-r.top-r.height/2)*.3}px)`}
+if(scrollY<innerHeight)wm.style.transform=`rotateY(${(px/innerWidth-.5)*12}deg) rotateX(${(.5-py/innerHeight)*8}deg)`})},{passive:true});
+document.addEventListener('pointerout',e=>{const m=e.target.closest&&e.target.closest('.mag');if(m&&!m.contains(e.relatedTarget))m.style.transform=''});
+</script></body></html>
