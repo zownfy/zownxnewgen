@@ -189,7 +189,12 @@ const dl=$('#dl');
 let R=CFG.REPO;
 if(!R&&/\.github\.io$/i.test(location.hostname)){const o=location.hostname.split('.')[0],p=location.pathname.split('/')[1];R=o+'/'+(p||o+'.github.io')}
 const setBtn=()=>{dl.textContent=('Download Zownium Newgen '+CFG.VERSION).trim();$('#ver').textContent=CFG.VERSION};
-const apply=x=>{dl.href=x.u;dl.setAttribute('download',x.n);CFG.UPDATED_AT=x.d;const v=x.n.match(/v?(\d+(?:[._]\d+)+)/i);CFG.VERSION=v?'v'+v[1].replace(/_/g,'.'):'';setBtn();upd();$('#upd').style.display=''};
+let CUR=null;
+const apply=x=>{CUR=x;dl.href=x.u;dl.setAttribute('download',x.n);CFG.UPDATED_AT=x.d;const v=x.n.match(/v?(\d+(?:[._]\d+)+)/i);CFG.VERSION=v?'v'+v[1].replace(/_/g,'.'):'';setBtn();upd();$('#upd').style.display=''};
+dl.addEventListener('click',async e=>{if(!CUR)return;e.preventDefault();if(dl.dataset.b)return;dl.dataset.b=1;const t=dl.textContent;dl.textContent='Downloading…';
+try{const r=await fetch(CUR.u);if(!r.ok)throw 0;const b=await r.blob(),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=CUR.n.replace(/^#+/,'');document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),6e4)}
+catch(_){location.href=CUR.u}
+dl.textContent=t;delete dl.dataset.b});
 if(R){dl.href='https://github.com/'+R;dl.target='_blank';dl.rel='noopener';
 (async()=>{let c=null;try{c=JSON.parse(localStorage.getItem('zl2'))}catch(e){}
 if(c&&c.r===R&&c.f)apply(c.f);
