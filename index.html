@@ -83,13 +83,19 @@ footer{padding:34px 6vw;border-top:1px solid var(--ln);display:flex;justify-cont
 .rv{opacity:0}.rv.in{opacity:1;animation:rv .95s var(--e) calc(var(--i,0)*70ms) backwards}
 @supports(animation-timeline:scroll()){#pg{animation:pgp linear both;animation-timeline:scroll()}@keyframes pgp{to{transform:scaleX(1)}}
 .hi{animation:hf linear both;animation-timeline:view();animation-range:exit 5% exit 85%}@keyframes hf{to{opacity:0;transform:translateY(-7vh) scale(.94)}}}
+.vg{display:grid;gap:18px;max-width:1180px;margin:56px auto 0;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.vc{border-radius:24px;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.015));border:1px solid var(--ln);transition:transform .6s var(--e),border-color .3s}
+.vc:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22)}
+.vc video{display:block;width:100%;aspect-ratio:16/9;background:#000;object-fit:contain}
+.vc p{padding:14px 18px;font-weight:500;font-size:15px;letter-spacing:-.01em;text-transform:capitalize}
+section[hidden],a[hidden]{display:none}
 @media(max-width:760px){.lk{display:none}section{padding:10vh 5vw}.win{grid-template-columns:1fr}.sb{flex-direction:row;overflow:auto;border-right:0;border-bottom:1px solid var(--ln)}.sb p{display:none}.tb{white-space:nowrap}.dock span{display:none}.dock{padding-left:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important;scroll-behavior:auto!important}}
 </style></head><body>
 <div class="amb"><i style="left:-18vmax;top:-22vmax;--k:var(--a1)"></i><i style="right:-24vmax;top:4vh;--k:var(--a2);animation-delay:-9s"></i><i style="left:18vw;bottom:-38vmax;--k:var(--a3);animation-delay:-17s"></i></div>
 <div id="pg"></div>
 <nav class="gl"><a class="logo" href="#top"><i>Z</i>Zown</a>
-<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
+<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a><a href="#showcase" id="shl" hidden>Showcase</a></div>
 <a class="btn p sm mag" href="#get">Download</a></nav>
 <div class="dock gl"><span>Theme</span><div id="dk" style="display:flex;gap:6px"></div></div>
 <main>
@@ -113,6 +119,9 @@ footer{padding:34px 6vw;border-top:1px solid var(--ln);display:flex;justify-cont
 <section id="studio"><span class="eb rv">Make it yours</span><h2 class="rv">Your look. <span class="ir">Your client.</span></h2>
 <p class="sub rv">Pure black and white or full colour. Glass, glow and blur are adjustable and saved per profile.</p>
 <div class="grid" id="sd"></div></section>
+<section id="showcase" hidden><span class="eb rv">Showcase</span><h2 class="rv">See it <span class="ir">in action.</span></h2>
+<p class="sub rv">Clips straight from the client. New videos appear here automatically.</p>
+<div class="vg" id="vg"></div></section>
 <section class="fin" id="get"><div class="wm2 rv">Zown</div><h2 class="rv">Ready to <span class="ir">play beyond?</span></h2>
 <p class="req rv">Minecraft 1.21.1 · Fabric Loader · Fabric API · Java 21</p>
 <div class="tag gl rv" id="upd" style="margin:0 0 30px"><b></b><span id="ut"></span></div>
@@ -206,4 +215,26 @@ L.sort((a,b)=>new Date(b.d)-new Date(a.d));
 if(L[0]){apply(L[0]);try{localStorage.setItem('zl2',JSON.stringify({t:Date.now(),r:R,f:L[0]}))}catch(e){}}
 }catch(e){}}})()}
 else if(CFG.DOWNLOAD_URL){dl.href=CFG.DOWNLOAD_URL;dl.setAttribute('download','')}
+
+/* ====== SHOWCASE: repo mein koi bhi video file (kisi bhi folder mein) add karo, web pe auto aa jayegi ====== */
+(()=>{const VID=/\.(mp4|webm|mov|m4v|ogv)$/i,sec=$('#showcase'),g=$('#vg');
+if(!R||!sec)return;
+const draw=L=>{if(!L.length)return;g.innerHTML='';
+L.forEach((v,i)=>{const d=document.createElement('div');d.className='vc rv';d.style.setProperty('--i',i%3);
+const el=document.createElement('video');el.controls=true;el.playsInline=true;el.preload='metadata';el.src=v.u+'#t=0.1';
+el.addEventListener('play',()=>$$('#vg video').forEach(o=>o!==el&&o.pause()));
+const p=document.createElement('p');p.textContent=v.n;d.append(el,p);g.appendChild(d);io.observe(d)});
+sec.hidden=false;$('#shl').hidden=false};
+let c=null;try{c=JSON.parse(localStorage.getItem('zv1'))}catch(e){}
+if(c&&c.r===R&&c.l)draw(c.l);
+if(!c||c.r!==R||Date.now()-c.t>18e4){(async()=>{try{
+const j=await(await fetch(`https://api.github.com/repos/${R}/git/trees/HEAD?recursive=1`)).json();
+const L=(j.tree||[]).filter(x=>x.type==='blob'&&VID.test(x.path)).map(x=>({
+n:x.path.split('/').pop().replace(VID,'').replace(/[-_.]+/g,' ').trim(),
+u:'https://raw.githubusercontent.com/'+R+'/HEAD/'+x.path.split('/').map(encodeURIComponent).join('/')}))
+.sort((a,b)=>a.n.localeCompare(b.n,undefined,{numeric:true}));
+try{localStorage.setItem('zv1',JSON.stringify({t:Date.now(),r:R,l:L}))}catch(e){}
+if(JSON.stringify(L)!==JSON.stringify(c&&c.l)){if(L.length)draw(L);else{sec.hidden=true;$('#shl').hidden=true}}
+}catch(e){}})()}
+})();
 </script></body></html>
