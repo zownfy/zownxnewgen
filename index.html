@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en" class="locked"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050506">
 <link rel="canonical" href="https://zown.lol">
@@ -84,9 +84,16 @@ footer{padding:34px 6vw;border-top:1px solid var(--ln);display:flex;justify-cont
 @supports(animation-timeline:scroll()){#pg{animation:pgp linear both;animation-timeline:scroll()}@keyframes pgp{to{transform:scaleX(1)}}
 .hi{animation:hf linear both;animation-timeline:view();animation-range:exit 5% exit 85%}@keyframes hf{to{opacity:0;transform:translateY(-7vh) scale(.94)}}}
 .vid{max-width:940px;margin:56px auto 0;border-radius:30px;overflow:hidden;aspect-ratio:16/9;background:#000;display:grid;place-items:center;box-shadow:0 60px 160px color-mix(in srgb,var(--a1) 22%,transparent),inset 0 1px 0 rgba(255,255,255,.14)}.vid video,.vid iframe{width:100%;height:100%;border:0;display:block;background:#000}.vid p{color:var(--mut);font-size:15px;padding:20px;text-align:center}
+.locked{overflow:hidden}.locked body>*:not(#gate){visibility:hidden}
+#gate{position:fixed;inset:0;z-index:999;display:none;place-items:center;padding:24px;background:var(--bg)}.locked #gate{display:grid;visibility:visible}
+#gate .gb{width:min(380px,100%);border-radius:28px;padding:34px 28px;text-align:center}#gate h2{font-size:1.8rem;margin-bottom:8px}#gate p{color:var(--mut);font-size:14px;margin-bottom:22px}
+#gate input{width:100%;padding:15px 20px;border-radius:99px;border:1px solid var(--ln);background:rgba(255,255,255,.06);color:var(--fg);font:500 16px 'Inter Tight',system-ui,sans-serif;text-align:center;outline:0;margin-bottom:12px}#gate input:focus{border-color:var(--a2)}
+#gate button{width:100%;justify-content:center;cursor:pointer}#gate .er{color:#ff7a8a;font-size:13px;min-height:20px;margin:10px 0 0}#gate .gb.sk{animation:sk .4s}@keyframes sk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 @media(max-width:760px){.lk{display:none}section{padding:10vh 5vw}.win{grid-template-columns:1fr}.sb{flex-direction:row;overflow:auto;border-right:0;border-bottom:1px solid var(--ln)}.sb p{display:none}.tb{white-space:nowrap}.dock span{display:none}.dock{padding-left:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important;scroll-behavior:auto!important}}
 </style></head><body>
+<div id="gate"><div class="gb gl" id="gb"><h2>Enter <span class="ir">password</span></h2><p>This site is protected.</p><input id="gp" type="password" placeholder="Password" autocomplete="off" autocapitalize="off"><button class="btn p" id="gx">Unlock</button><div class="er" id="ge"></div></div></div>
+
 <div class="amb"><i style="left:-18vmax;top:-22vmax;--k:var(--a1)"></i><i style="right:-24vmax;top:4vh;--k:var(--a2);animation-delay:-9s"></i><i style="left:18vw;bottom:-38vmax;--k:var(--a3);animation-delay:-17s"></i></div>
 <div id="pg"></div>
 <nav class="gl"><a class="logo" href="#top"><i>Z</i>Zown</a>
@@ -146,6 +153,15 @@ const CFG={
 };
 /* =============================================================== */
 const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+/* password gate (client side) */
+{const H='5393bd1588f1e7dce6c95075707d14598d8c53e0e99fa88ccbdf30a13d750ab0',g=$('#gp'),e=$('#ge'),b=$('#gb');
+const hs=async t=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))].map(x=>x.toString(16).padStart(2,'0')).join('');
+let ok=false;try{ok=sessionStorage.getItem('zk')===H}catch(_){}
+const open=()=>{document.documentElement.classList.remove('locked')};
+if(ok)open();else{
+const go=async()=>{let good=false;try{good=(await hs(g.value))===H}catch(_){e.textContent='Open this site over https.';return}
+if(good){try{sessionStorage.setItem('zk',H)}catch(_){}open()}else{e.textContent='Wrong password';g.value='';b.classList.remove('sk');void b.offsetWidth;b.classList.add('sk')}};
+$('#gx').onclick=go;g.onkeydown=ev=>{if(ev.key==='Enter')go()};setTimeout(()=>g.focus(),100)}}
 const IC={trig:'<circle cx="12" cy="12" r="6"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/>',bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',pot:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 14h8"/>',star:'<path d="m12 3 2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"/>',refill:'<path d="M20 11a8 8 0 0 0-14-4M4 5v4h4M4 13a8 8 0 0 0 14 4M20 19v-4h-4"/>',inv:'<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><path d="M16.5 13v7M13 16.5h7"/>',flame:'<path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/>',kb:'<path d="M4 20l6-6 4 4 6-8M15 10h5v5"/>',sprint:'<path d="M6 5l7 7-7 7M12 5l7 7-7 7"/>',pal:'<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 1.5-2-.6-1.2.2-2.5 1.5-2.5H17a4 4 0 0 0 4-4c0-5-4-9.5-9-9.5z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="11" r="1"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',layers:'<path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/>',wave:'<path d="M2 12c3-7 5-7 8 0s5 7 8 0 3-4 4-2"/>'};
 const NP=[
 ['Goated Trigger Bot','trig','Combat','A trigger bot that behaves like a person. Reaction time is a mean plus a spread, hits wait for full charge, and it can hit-select, skip shields and respect your max reach. Mistake chance and follow-up jitter keep patterns natural.',['Reaction mean/spread','Max Reach','Crit Mode','Shield Mode','Only Mouse Hold']],
