@@ -83,19 +83,14 @@ footer{padding:34px 6vw;border-top:1px solid var(--ln);display:flex;justify-cont
 .rv{opacity:0}.rv.in{opacity:1;animation:rv .95s var(--e) calc(var(--i,0)*70ms) backwards}
 @supports(animation-timeline:scroll()){#pg{animation:pgp linear both;animation-timeline:scroll()}@keyframes pgp{to{transform:scaleX(1)}}
 .hi{animation:hf linear both;animation-timeline:view();animation-range:exit 5% exit 85%}@keyframes hf{to{opacity:0;transform:translateY(-7vh) scale(.94)}}}
-.vg{display:grid;gap:18px;max-width:1180px;margin:56px auto 0;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
-.vc{border-radius:24px;overflow:hidden;background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.015));border:1px solid var(--ln);transition:transform .6s var(--e),border-color .3s}
-.vc:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22)}
-.vc video{display:block;width:100%;aspect-ratio:16/9;background:#000;object-fit:contain}
-.vc p{padding:14px 18px;font-weight:500;font-size:15px;letter-spacing:-.01em;text-transform:capitalize}
-section[hidden],a[hidden]{display:none}
+.vid{max-width:940px;margin:56px auto 0;border-radius:30px;overflow:hidden;aspect-ratio:16/9;background:#000;display:grid;place-items:center;box-shadow:0 60px 160px color-mix(in srgb,var(--a1) 22%,transparent),inset 0 1px 0 rgba(255,255,255,.14)}.vid video,.vid iframe{width:100%;height:100%;border:0;display:block;background:#000}.vid p{color:var(--mut);font-size:15px;padding:20px;text-align:center}
 @media(max-width:760px){.lk{display:none}section{padding:10vh 5vw}.win{grid-template-columns:1fr}.sb{flex-direction:row;overflow:auto;border-right:0;border-bottom:1px solid var(--ln)}.sb p{display:none}.tb{white-space:nowrap}.dock span{display:none}.dock{padding-left:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important;scroll-behavior:auto!important}}
 </style></head><body>
 <div class="amb"><i style="left:-18vmax;top:-22vmax;--k:var(--a1)"></i><i style="right:-24vmax;top:4vh;--k:var(--a2);animation-delay:-9s"></i><i style="left:18vw;bottom:-38vmax;--k:var(--a3);animation-delay:-17s"></i></div>
 <div id="pg"></div>
 <nav class="gl"><a class="logo" href="#top"><i>Z</i>Zown</a>
-<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a><a href="#showcase" id="shl" hidden>Showcase</a></div>
+<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#showcase">Showcase</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
 <a class="btn p sm mag" href="#get">Download</a></nav>
 <div class="dock gl"><span>Theme</span><div id="dk" style="display:flex;gap:6px"></div></div>
 <main>
@@ -112,6 +107,9 @@ section[hidden],a[hidden]{display:none}
 <p class="sub rv">Triggers, potions, refillers, totems and movement, tuned for Nethpot fights. Here is exactly what each module does.</p>
 <div class="grid" id="np"></div>
 <div class="more rv" id="mo"><span style="border:0;background:none">Also in Nethpot</span></div></section>
+<section id="showcase"><span class="eb rv">Showcase</span><h2 class="rv">See it <span class="ir">in action.</span></h2>
+<p class="sub rv">Watch Zownium Newgen in a real fight.</p>
+<div class="vid gl rv" id="vid"></div><div class="more rv" id="vl"></div></section>
 <section id="gui"><span class="eb rv">Live preview</span><h2 class="rv">Liquid glass <span class="ir">GUI.</span></h2>
 <p class="sub rv">Pick a tab and toggle modules. This is how it feels in game.</p>
 <div class="win gl rv"><div class="sb" id="sb"><p>Zownium</p></div><div class="ml" id="ml"></div></div></section>
@@ -119,9 +117,9 @@ section[hidden],a[hidden]{display:none}
 <section id="studio"><span class="eb rv">Make it yours</span><h2 class="rv">Your look. <span class="ir">Your client.</span></h2>
 <p class="sub rv">Pure black and white or full colour. Glass, glow and blur are adjustable and saved per profile.</p>
 <div class="grid" id="sd"></div></section>
-<section id="showcase" hidden><span class="eb rv">Showcase</span><h2 class="rv">See it <span class="ir">in action.</span></h2>
-<p class="sub rv">Clips straight from the client. New videos appear here automatically.</p>
-<div class="vg" id="vg"></div></section>
+<section id="editions"><span class="eb rv">Choose your build</span><h2 class="rv">Made for <span class="ir">every device.</span></h2>
+<p class="sub rv">Pick the version that fits your hardware.</p>
+<div class="grid" id="ed" style="max-width:900px"></div></section>
 <section class="fin" id="get"><div class="wm2 rv">Zown</div><h2 class="rv">Ready to <span class="ir">play beyond?</span></h2>
 <p class="req rv">Minecraft 1.21.1 · Fabric Loader · Fabric API · Java 21</p>
 <div class="tag gl rv" id="upd" style="margin:0 0 30px"><b></b><span id="ut"></span></div>
@@ -132,11 +130,19 @@ section[hidden],a[hidden]{display:none}
 <script>
 /* ====== EDIT HERE: download link, version and update time ====== */
 const CFG={
- REPO:'zownfy/zownxnewgen',   // GitHub repo (username/repo)
- EXCLUDE:/pearlcatch/i,        // ye naam wali jar/zip ignore hogi (dusre mods)
- DOWNLOAD_URL:'',         // optional fallback
- VERSION:'',
- UPDATED_AT:'2026-11-24T12:00:00Z'
+ DOWNLOAD_URL:'/download',      // direct jar link (file sits next to index.html) or paste any full link
+ REPO:'',                 // public GitHub repo: newest .jar/.zip is picked AUTOMATICALLY (name, version, time)
+ DL_HIGH:'zownium-high.jar',    // download link for high end Device and PC (file next to index.html, or a full link)
+ DL_LOW:'zownium-low.jar',      // download link for low end Device and PC
+ VIDEO_REPO:'',                // GitHub repo "username/repo": every video inside VIDEO_DIR is added AUTOMATICALLY
+ VIDEO_DIR:'videos',            // folder in that repo where you upload the videos
+ VIDEOS:[                     // optional manual list (YouTube etc). Title is made automatically: MendHelperV3.mp4 -> "Mend Helper V3"
+  // 'MendHelperV3.mp4',
+  // 'AutoTotem.mp4',
+  // {y:'dQw4w9WgXcQ', t:'Full review'},   // YouTube video (t = title, optional for files)
+ ],
+ VERSION:'v1.2.0',                          // shown in hero + download button
+ UPDATED_AT:'2026-11-24T12:00:00Z'          // set this when you release an update (ISO date-time)
 };
 /* =============================================================== */
 const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
@@ -166,6 +172,19 @@ $('#m1').innerHTML=row(mn.filter((_,i)=>i%2==0));$('#m2').innerHTML=row(mn.filte
 $('#wm').innerHTML='Zown'.split('').map((c,i)=>`<i style="--n:${i}">${c}</i>`).join('');
 $('h1').innerHTML=$('h1').dataset.s.split(' ').map((w,i)=>`<span class="w"><i class="${i>1?'ir':''}" style="--n:${i}">${w}</i></span>`).join(' ');
 $('#np').innerHTML=NP.map((m,i)=>`<article class="c rv" style="--c:${V(i)};--i:${i%3}"><div class="ico">${sv(m[1])}</div><span class="t"><b></b>${m[2]}</span><h3>${m[0]}</h3><p>${m[3]}</p><div class="ch">${m[4].map(c=>`<span>${c}</span>`).join('')}</div></article>`).join('');
+/* showcase videos: auto from GitHub folder + optional manual list */
+(async()=>{const v=$('#vid'),l=$('#vl');
+const nice=f=>f.split(/[\\/]/).pop().replace(/\.[^.]+$/,'').replace(/[_-]+/g,' ').replace(/([a-z\d])([A-Z])/g,'$1 $2').replace(/([A-Z]+)([A-Z][a-z])/g,'$1 $2').trim();
+const norm=x=>{x=typeof x==='string'?{f:x}:x;return{...x,t:x.t||(x.f?nice(x.f):'')}};
+let L=(CFG.VIDEOS||[]).map(norm);const R=CFG.VIDEO_REPO,D=(CFG.VIDEO_DIR||'videos').replace(/^\/+|\/+$/g,'');
+if(R){try{let c=null;try{c=JSON.parse(sessionStorage.getItem('zv'))}catch(e){}
+if(!c||c.k!==R+'/'+D||Date.now()-c.t>3e5){const f=await(await fetch(`https://api.github.com/repos/${R}/contents/${D}`)).json();c={k:R+'/'+D,t:Date.now(),f:f.filter(x=>x.type==='file'&&/\.(mp4|webm|mov|m4v)$/i.test(x.name)).map(x=>({f:D+'/'+x.name,u:x.download_url}))};try{sessionStorage.setItem('zv',JSON.stringify(c))}catch(e){}}
+L=L.concat(c.f.filter(x=>!L.some(y=>y.f===x.f)).map(norm))}catch(e){}}
+const play=i=>{const x=L[i];if(x.y)v.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(x.y)}?rel=0" title="${x.t||'Video'}" allow="accelerometer;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen loading="lazy"></iframe>`;else{v.innerHTML='<video controls playsinline preload="metadata"></video>';const e=$('video',v);e.src=encodeURI(x.f);if(x.u)e.onerror=()=>{e.onerror=null;e.src=x.u}}$$('.tb',l).forEach((b,j)=>b.classList.toggle('a',j==i))};
+if(!L.length)v.innerHTML='<p>Showcase video coming soon.</p>';else{if(L.length>1)L.forEach((x,i)=>{const b=document.createElement('button');b.className='tb';b.textContent=x.t||'Video '+(i+1);b.onclick=()=>play(i);l.appendChild(b)});play(0)}})();
+/* editions */
+const ED=[['For high end Device and PC','bolt','High end','Full experience with every visual effect, glow and animation turned on.',['Max visuals','Smooth animations','All modules'],'DL_HIGH','Download High End'],['For low end Device and PC','layers','Low end','Lightweight build tuned for steady FPS on weaker devices and older PCs.',['Better FPS','Light effects','All modules'],'DL_LOW','Download Low End']];
+$('#ed').innerHTML=ED.map((x,i)=>`<article class="c rv" style="--c:${V(i*2)};--i:${i}"><div class="ico">${sv(x[1])}</div><span class="t"><b></b>${x[2]}</span><h3>${x[0]}</h3><p>${x[3]}</p><div class="ch">${x[4].map(c=>`<span>${c}</span>`).join('')}</div><a class="btn g mag" style="margin-top:24px" href="${CFG[x[5]]||'#get'}" download>${x[6]}</a></article>`).join('');
 /* gui */
 const sb=$('#sb'),ml=$('#ml');let st={};
 Object.keys(GUI).forEach((k,i)=>{GUI[k].split(',').forEach(m=>st[k+m.replace('*','')]=m.endsWith('*'));const b=document.createElement('button');b.className='tb'+(i?'':' a');b.textContent=k;b.onclick=()=>{$$('.tb').forEach(x=>x.classList.remove('a'));b.classList.add('a');show(k)};sb.appendChild(b)});
@@ -190,51 +209,22 @@ const m=pt.closest&&pt.closest('.mag');if(m){const r=m.getBoundingClientRect();m
 if(scrollY<innerHeight)wm.style.transform=`rotateY(${(px/innerWidth-.5)*12}deg) rotateX(${(.5-py/innerHeight)*8}deg)`})},{passive:true});
 document.addEventListener('pointerout',e=>{const m=e.target.closest&&e.target.closest('.mag');if(m&&!m.contains(e.relatedTarget))m.style.transform=''});
 /* download link + live update time */
+$('#ver').textContent=CFG.VERSION;$('#dl').textContent='Download Zownium Newgen '+CFG.VERSION;
+{const a=$('#dl'),u=CFG.DOWNLOAD_URL;a.href=u;if(/\.(jar|zip)(\?|$)/i.test(u))a.setAttribute('download','');else if(/^https?:/.test(u)){a.target='_blank';a.rel='noopener'}}
 const rel=t=>{const s=Math.max(0,(Date.now()-t)/1e3);if(s<60)return'just now';const m=s/60;if(m<60)return Math.floor(m)+' min ago';const h=m/60;if(h<24)return Math.floor(h)+' hr ago';const d=h/24;if(d<30)return Math.floor(d)+' days ago';return new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})};
 function upd(){const t=new Date(CFG.UPDATED_AT);$('#ut').textContent=(CFG.VERSION?'Latest build '+CFG.VERSION:'Latest build')+' · Updated '+rel(t);$('#upd').title=t.toLocaleString()}
+upd();setInterval(upd,30000);
+/* update time = when zownium.jar was last uploaded to the site (hidden if the host does not report it) */
 $('#upd').style.display='none';
-const dl=$('#dl');
-/* AUTO LATEST: repo ke root mein jo sabse naya .jar/.zip upload hua wahi download + web pe dikhega */
-let R=CFG.REPO;
-if(!R&&/\.github\.io$/i.test(location.hostname)){const o=location.hostname.split('.')[0],p=location.pathname.split('/')[1];R=o+'/'+(p||o+'.github.io')}
-const setBtn=()=>{dl.textContent=('Download Zownium Newgen '+CFG.VERSION).trim();$('#ver').textContent=CFG.VERSION};
-let CUR=null;
-const apply=x=>{CUR=x;dl.href=x.u;dl.setAttribute('download',x.n);CFG.UPDATED_AT=x.d;const v=x.n.match(/v?(\d+(?:[._]\d+)+)/i);CFG.VERSION=v?'v'+v[1].replace(/_/g,'.'):'';setBtn();upd();$('#upd').style.display=''};
-dl.addEventListener('click',async e=>{if(!CUR)return;e.preventDefault();if(dl.dataset.b)return;dl.dataset.b=1;const t=dl.textContent;dl.textContent='Downloading…';
-try{const r=await fetch(CUR.u);if(!r.ok)throw 0;const b=await r.blob(),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=CUR.n.replace(/^#+/,'');document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),6e4)}
-catch(_){location.href=CUR.u}
-dl.textContent=t;delete dl.dataset.b});
-if(R){dl.href='https://github.com/'+R;dl.target='_blank';dl.rel='noopener';
-(async()=>{let c=null;try{c=JSON.parse(localStorage.getItem('zl2'))}catch(e){}
-if(c&&c.r===R&&c.f)apply(c.f);
-if(!c||c.r!==R||Date.now()-c.t>6e5){try{
-const f=await(await fetch(`https://api.github.com/repos/${R}/contents/`)).json();
-const js=f.filter(x=>x.type==='file'&&/\.(jar|zip)$/i.test(x.name)&&!(CFG.EXCLUDE&&CFG.EXCLUDE.test(x.name)));
-const L=await Promise.all(js.map(async x=>{const r=await(await fetch(`https://api.github.com/repos/${R}/commits?path=${encodeURIComponent(x.path)}&per_page=1`)).json();return{n:x.name,u:x.download_url.replace(/#/g,'%23'),d:r[0].commit.committer.date}}));
-L.sort((a,b)=>new Date(b.d)-new Date(a.d));
-if(L[0]){apply(L[0]);try{localStorage.setItem('zl2',JSON.stringify({t:Date.now(),r:R,f:L[0]}))}catch(e){}}
-}catch(e){}}})()}
-else if(CFG.DOWNLOAD_URL){dl.href=CFG.DOWNLOAD_URL;dl.setAttribute('download','')}
-
-/* ====== SHOWCASE: repo mein koi bhi video file (kisi bhi folder mein) add karo, web pe auto aa jayegi ====== */
-(()=>{const VID=/\.(mp4|webm|mov|m4v|ogv)$/i,sec=$('#showcase'),g=$('#vg');
-if(!R||!sec)return;
-const draw=L=>{if(!L.length)return;g.innerHTML='';
-L.forEach((v,i)=>{const d=document.createElement('div');d.className='vc rv';d.style.setProperty('--i',i%3);
-const el=document.createElement('video');el.controls=true;el.playsInline=true;el.preload='metadata';el.src=v.u+'#t=0.1';
-el.addEventListener('play',()=>$$('#vg video').forEach(o=>o!==el&&o.pause()));
-const p=document.createElement('p');p.textContent=v.n;d.append(el,p);g.appendChild(d);io.observe(d)});
-sec.hidden=false;$('#shl').hidden=false};
-let c=null;try{c=JSON.parse(localStorage.getItem('zv1'))}catch(e){}
-if(c&&c.r===R&&c.l)draw(c.l);
-if(!c||c.r!==R||Date.now()-c.t>18e4){(async()=>{try{
-const j=await(await fetch(`https://api.github.com/repos/${R}/git/trees/HEAD?recursive=1`)).json();
-const L=(j.tree||[]).filter(x=>x.type==='blob'&&VID.test(x.path)).map(x=>({
-n:x.path.split('/').pop().replace(VID,'').replace(/[-_.]+/g,' ').trim(),
-u:'https://raw.githubusercontent.com/'+R+'/HEAD/'+x.path.split('/').map(encodeURIComponent).join('/')}))
-.sort((a,b)=>a.n.localeCompare(b.n,undefined,{numeric:true}));
-try{localStorage.setItem('zv1',JSON.stringify({t:Date.now(),r:R,l:L}))}catch(e){}
-if(JSON.stringify(L)!==JSON.stringify(c&&c.l)){if(L.length)draw(L);else{sec.hidden=true;$('#shl').hidden=true}}
-}catch(e){}})()}
-})();
+$$('a.btn.p').forEach(a=>{if(/download/i.test(a.textContent)){a.href='/download';a.setAttribute('download','')}});
+const sync=()=>fetch('/api/latest',{cache:'no-store'}).then(r=>r.json()).then(l=>{if(!l)return;CFG.UPDATED_AT=l.date;const v=l.name.match(/v?(\d+(?:[._]\d+)+)/i);CFG.VERSION=v?'v'+v[1].replace(/_/g,'.'):'';$('#ver').textContent=CFG.VERSION;$('#dl').textContent='Download Zownium Newgen '+CFG.VERSION;upd();$('#upd').style.display=''}).catch(()=>{});
+sync();setInterval(sync,120000);
+/* AUTO LATEST: reads the newest .jar/.zip from the public GitHub repo, nothing to edit */
+(async()=>{const R=CFG.REPO;if(!R)return;try{let c=null;try{c=JSON.parse(sessionStorage.getItem('zl'))}catch(e){}
+if(!c||Date.now()-c.t>3e5){const f=await(await fetch(`https://api.github.com/repos/${R}/contents/`)).json();
+const js=f.filter(x=>x.type==='file'&&/\.(jar|zip)$/i.test(x.name));
+const L=await Promise.all(js.map(async x=>{const r=await(await fetch(`https://api.github.com/repos/${R}/commits?path=${encodeURIComponent(x.path)}&per_page=1`)).json();return{n:x.name,u:x.download_url,d:r[0].commit.committer.date}}));
+L.sort((a,b)=>new Date(b.d)-new Date(a.d));c={t:Date.now(),f:L[0]};try{sessionStorage.setItem('zl',JSON.stringify(c))}catch(e){}}
+const x=c.f;if(!x)return;CFG.DOWNLOAD_URL=x.u;CFG.UPDATED_AT=x.d;const v=x.n.match(/v?(\d+(?:[._]\d+)+)/i);if(v)CFG.VERSION='v'+v[1].replace(/_/g,'.');
+const a=$('#dl');a.href=x.u;a.setAttribute('download','');$('#ver').textContent=CFG.VERSION;a.textContent='Download Zownium Newgen '+CFG.VERSION;upd()}catch(e){}})();
 </script></body></html>
