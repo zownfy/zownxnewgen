@@ -236,6 +236,33 @@ html.ion #intro{display:block}
 .cf small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
 .cf .btn{margin-top:auto;justify-content:center;cursor:pointer;width:100%}
 .cfe{grid-column:1/-1;text-align:center;color:var(--mut);padding:36px 12px}
+
+/* ===== performance ===== */
+#fxc{mix-blend-mode:normal}
+.gl{-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4)}
+@keyframes rv{from{opacity:0;transform:translateY(36px) scale(.97);filter:blur(7px)}}
+@keyframes rvl{from{opacity:0;transform:translateY(24px)}}
+.c::after{animation:none}.c:hover::after{animation:ang 3s linear infinite}
+.btn.p{animation:none}
+.btn.p::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;box-shadow:0 0 90px color-mix(in srgb,var(--a2) 55%,transparent),0 0 30px color-mix(in srgb,var(--a1) 45%,transparent);opacity:0;animation:bpo 3.4s ease-in-out infinite}
+@keyframes bpo{50%{opacity:1}}
+.beg{animation:none}
+.sc.on#s5 .btn{animation:wi 1s var(--e) 2s both}
+.big{filter:none;position:relative}.sc.on .big{animation:none}
+.big::before{content:"";position:absolute;inset:-25% 0;z-index:-1;background:radial-gradient(closest-side,color-mix(in srgb,var(--a1) 45%,transparent),transparent);animation:gp 2.4s ease-in-out infinite alternate}
+@keyframes gp{from{opacity:.45}to{opacity:1}}
+.zx{filter:none}
+@keyframes zs{from{opacity:0;filter:blur(40px);transform:scale(1.4)}to{opacity:1;filter:blur(0);transform:none}}
+#s2::before,#s5::before{content:"";position:absolute;left:50%;top:46%;width:80vmin;height:46vmin;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--a3) 28%,transparent),transparent);pointer-events:none;z-index:-1}
+#s5::before{background:radial-gradient(closest-side,rgba(255,198,107,.28),transparent)}
+.pm{filter:none}
+.amb i,.ia i{contain:layout paint}
+#modules,#editions,#configs{content-visibility:auto;contain-intrinsic-size:auto 900px}
+html.lite .gl{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(20,20,28,.9)}
+html.lite .rv.in{animation-name:rvl}
+html.lite .amb i,html.lite .ia i{animation:none}
+html.lite #fxc,html.lite .ia::after,html.lite .amb::after{display:none}
+html.lite .orb::after{display:none}
 </style></head><body>
 <div id="gate"><div class="gb gl" id="gb"><h2>Enter <span class="ir">password</span></h2><p>This site is protected.</p><input id="gp" type="password" placeholder="Password" autocomplete="off" autocapitalize="off"><button class="btn p" id="gx">Unlock</button><div class="er" id="ge"></div></div></div>
 
@@ -257,16 +284,6 @@ html.ion #intro{display:block}
 <div class="ft" style="--d:1.9s"><em>03</em><span class="tx gx3" id="f3" style="--d2:2.2s"></span></div>
 <div class="ft" style="--d:2.6s"><em>04</em><span class="tx bl3" id="f4" style="--d2:2.9s"></span></div>
 </div></div>
-
-<div class="sc" id="s4"><div class="ey">GIFs · PiPs · Vids</div>
-<div class="wall">
-<div class="tile t1"><span>VID</span><video src="media/clip-a.mp4" muted loop playsinline preload="auto"></video></div>
-<div class="tile t2"><span>GIF</span><img src="media/loop.gif" alt=""></div>
-<div class="tile t3"><span>VID</span><video src="media/clip-b.mp4" muted loop playsinline preload="auto"></video></div>
-<div class="tile t4"><span>CLIP</span><video src="media/clip-c.mp4" muted loop playsinline preload="auto"></video></div>
-<div class="tile t5"><div class="pbar"><u></u><u></u><u></u>PiP<b>LIVE</b></div><video src="media/clip-a.mp4" muted loop playsinline preload="auto"></video></div>
-</div>
-<div class="mt">Motion in every <span class="ir">corner.</span></div></div>
 
 <div class="sc" id="s5"><svg class="lock2" viewBox="0 0 64 64"><g class="sh"><path d="M20 28V20a12 12 0 0 1 24 0v8"/></g><rect x="12" y="28" width="40" height="28" rx="8"/><circle cx="32" cy="42" r="3.5"/></svg>
 <div class="pm" id="pm"></div><p>Zownium Newgen · Developed by Zown</p><button class="btn p" id="ie" type="button">Enter Zownium</button></div>
@@ -446,7 +463,7 @@ const ok=()=>c&&c.state==='running'&&on;
 const osc=(type,f1,f2,dur,v,delay=0,tp='lowpass',fq=9000)=>{if(!ok())return;const t=c.currentTime+delay,o=c.createOscillator(),g=c.createGain(),f=c.createBiquadFilter();o.type=type;f.type=tp;f.frequency.value=fq;o.frequency.setValueAtTime(f1,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+dur);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(f);f.connect(g);g.connect(m);o.start(t);o.stop(t+dur+.05)};
 const noise=(dur,f1,f2,v,q=1,tp='bandpass',rise=false)=>{if(!ok())return;const t=c.currentTime,s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=nb;f.type=tp;f.Q.value=q;f.frequency.setValueAtTime(f1,t);f.frequency.exponentialRampToValueAtTime(f2,t+dur);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+(rise?dur*.9:.04));g.gain.exponentialRampToValueAtTime(.0001,t+dur);s.connect(f);f.connect(g);g.connect(m);s.start(t);s.stop(t+dur+.05)};
 return{init,get on(){return on},
-wake(){init();return c?c.resume().then(()=>c.state==='running').catch(()=>false):Promise.resolve(false)},
+wake(){init();return c?Promise.race([c.resume().then(()=>c.state==='running').catch(()=>false),new Promise(r=>setTimeout(()=>r(c.state==='running'),350))]):Promise.resolve(false)},
 toggle(){on=!on;try{localStorage.setItem('zs',on?'1':'0')}catch(e){}return on},
 riser(d=2){noise(d,200,7000,.35,2,'bandpass',true);osc('sawtooth',60,400,d,.05,0,'lowpass',600)},
 boom(){osc('sine',110,28,1.6,.9);noise(.7,3000,200,.3,.8,'lowpass')},
@@ -463,7 +480,7 @@ tog(v){osc('sine',v?520:360,v?980:200,.13,.13)}}})();
 document.addEventListener('pointerdown',()=>{SFX.wake()},{once:true});
 
 /* ---------- intro ---------- */
-const I=$('#intro'),SC=['s1','s2','s3','s4','s5'].map(i=>$('#'+i));
+const I=$('#intro'),SC=['s1','s2','s3','s5'].map(i=>$('#'+i));
 sp($('#bz'),'ZOWN');
 $('#cond').innerHTML='Minecraft Cheat Client'.split(' ').map((w,i)=>`<span class="w"><i class="${i>0?'ir':''}" style="--n:${i}">${w}</i></span>`).join(' ');
 sp($('#f1'),'New Smooth Animations');sp($('#f2'),'New Sound Effects');sp($('#f3'),'New Designs');sp($('#f4'),'Text Animations');
@@ -475,20 +492,19 @@ const ic=$('#ic'),ix=ic.getContext('2d');
 function isz(){ic.width=innerWidth;ic.height=innerHeight}addEventListener('resize',isz);
 function burst(n=70,x=innerWidth/2,y=innerHeight/2){const C=TC();for(let i=0;i<n;i++){const a=Math.random()*6.283,s=2+Math.random()*9;PT.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,r:1+Math.random()*2.6,c:C[i%4],b:1})}}
 function pl(){raf=requestAnimationFrame(pl);ix.clearRect(0,0,ic.width,ic.height);ix.globalCompositeOperation='lighter';
-if(PT.length<110&&run&&Math.random()<.6){const C=TC();PT.push({x:Math.random()*ic.width,y:ic.height+10,vx:(Math.random()-.5)*.6,vy:-.5-Math.random()*1.3,l:1,r:.8+Math.random()*2,c:C[Math.random()*4|0],b:0})}
+if(PT.length<70&&run&&Math.random()<.5){const C=TC();PT.push({x:Math.random()*ic.width,y:ic.height+10,vx:(Math.random()-.5)*.6,vy:-.5-Math.random()*1.3,l:1,r:.8+Math.random()*2,c:C[Math.random()*4|0],b:0})}
 for(let i=PT.length-1;i>=0;i--){const p=PT[i];p.x+=p.vx;p.y+=p.vy;if(p.b){p.vx*=.95;p.vy*=.95;p.l-=.016}else p.l-=.0035;if(p.l<=0){PT.splice(i,1);continue}
-ix.globalAlpha=Math.min(1,p.l)*.9;ix.fillStyle=p.c;ix.beginPath();ix.arc(p.x,p.y,p.r*(p.b?p.l:1),0,6.283);ix.fill();ix.globalAlpha*=.18;ix.beginPath();ix.arc(p.x,p.y,p.r*5,0,6.283);ix.fill()}}
+ix.globalAlpha=Math.min(1,p.l)*.9;ix.fillStyle=p.c;ix.beginPath();ix.arc(p.x,p.y,p.r*(p.b?p.l:1),0,6.283);ix.fill();if(p.b){ix.globalAlpha*=.18;ix.beginPath();ix.arc(p.x,p.y,p.r*5,0,6.283);ix.fill()}}}
 function resetI(){tm.forEach(clearTimeout);tm=[];iv.forEach(clearInterval);iv=[];SC.concat($('#s0')).forEach(s=>s.classList.remove('on','gone'));$('#ipg').style.transition='none';$('#ipg').style.transform='scaleX(0)';void I.offsetWidth}
 function snd(){const b=$('#isn');b.textContent=SFX.on?'Sound on':'Sound off'}
-const TOTAL=15800;
+const TOTAL=13200;
 function seq(){run=true;
  $('#ipg').style.transition=`transform ${TOTAL}ms linear`;$('#ipg').style.transform='scaleX(1)';
  scn(0);SFX.riser(2.3);at(1050,()=>{SFX.boom();burst(60)});
  at(2500,()=>{scn(1);SFX.hit();scr($('#zx'),'ZOWNIUM',1200);burst(80)});at(3800,()=>SFX.shimmer());at(4000,()=>SFX.whoosh());
  at(5200,()=>{scn(2);SFX.whoosh();
   [[500,0],[1200,1],[1900,2],[2600,3]].forEach(([d,k])=>at(d,()=>{SFX.tick(k);if(k===0){let n=0;const x=setInterval(()=>{SFX.type();if(++n>20)clearInterval(x)},46);iv.push(x)}if(k===1)SFX.shimmer();if(k===2)SFX.hit();if(k===3)scr($('#f4'),'Text Animations',1000)}))});
- at(9000,()=>{scn(3);SFX.whoosh();$$('video',I).forEach(v=>{v.currentTime=0;v.play().catch(()=>{})});[0,1,2,3,4].forEach(k=>at(250+k*150,()=>{SFX.whoosh(k%2===0);SFX.tick(k)}));at(1700,()=>burst(40))});
- at(12800,()=>{scn(4);SFX.hit();at(1200,SFX.unlock);at(1300,()=>{SFX.chord();burst(110)})});
+ at(9000,()=>{scn(3);SFX.hit();at(1200,SFX.unlock);at(1300,()=>{SFX.chord();burst(110)})});
  at(TOTAL+1800,fin)}
 function fin(){if(!run)return;run=false;tm.forEach(clearTimeout);tm=[];iv.forEach(clearInterval);try{sessionStorage.setItem('zi','1')}catch(e){}
  SFX.whoosh(false);SFX.chord();H.classList.remove('introing');I.classList.add('out');
@@ -523,7 +539,7 @@ document.addEventListener('pointerdown',e=>{if(H.classList.contains('ion'))retur
 $('#ml').addEventListener('click',e=>{const m=e.target.closest('.m');if(m)SFX.tog(m.classList.contains('on'))});
 const fc=$('#fxc'),fx=fc.getContext('2d');let P=[],C4=TC(),n0=0;
 const rz=()=>{fc.width=innerWidth;fc.height=innerHeight};rz();addEventListener('resize',rz);
-addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||RM)return;for(let i=0;i<2;i++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.4,vy:(Math.random()-.5)*1.4,l:1,r:3+Math.random()*4,c:n0++%4})},{passive:true});
+addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||RM)return;if(P.length<60)for(let i=0;i<2;i++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.4,vy:(Math.random()-.5)*1.4,l:1,r:3+Math.random()*4,c:n0++%4})},{passive:true});
 setInterval(()=>{C4=TC()},600);
 (function f(){requestAnimationFrame(f);if(!P.length)return;fx.clearRect(0,0,fc.width,fc.height);fx.globalCompositeOperation='lighter';
  for(let i=P.length-1;i>=0;i--){const p=P[i];p.x+=p.vx;p.y+=p.vy;p.l-=.028;if(p.l<=0){P.splice(i,1);continue}const r=p.r*p.l;fx.fillStyle=C4[p.c];fx.globalAlpha=p.l*.9;fx.beginPath();fx.arc(p.x,p.y,r,0,6.283);fx.fill();fx.globalAlpha=p.l*.14;fx.beginPath();fx.arc(p.x,p.y,r*4,0,6.283);fx.fill()}
@@ -556,4 +572,7 @@ async function load(force){L.innerHTML='<div class="cfe">Loading configs...</div
  all=c.f.sort((a,b)=>a.n.localeCompare(b.n,undefined,{numeric:true}));draw()}
  catch(e){L.innerHTML='<div class="cfe">Could not load configs right now. Try Refresh in a moment.</div>'}}
 Q.oninput=draw;$('#cfr').onclick=()=>load(true);load()})();
+
+/* auto lite mode: if the device is slow, drop the heaviest paint costs but keep every animation */
+{let f=0,t0=performance.now(),bad=0,tot=0;(function m(t){tot++;f++;if(f>=60){const ms=(t-t0)/f;f=0;t0=t;if(ms>28){if(++bad>=2)document.documentElement.classList.add('lite')}else bad=0}if(tot<1500&&!document.documentElement.classList.contains('lite'))requestAnimationFrame(m)})(t0)}
 </script></body></html>
