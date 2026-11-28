@@ -223,74 +223,6 @@ html.ion #intro{display:block}
  .fts{align-items:center}.ft{flex-wrap:wrap;justify-content:center}
 }
 
-/* ================= FXOLOGY ================= */
-.fxb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-.fxb span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:99px;border:1px solid var(--ln);background:rgba(255,255,255,.04);color:#d0d0d6}
-.fxb .pr{border:0;color:#2a1c00;padding:9px 17px;background:linear-gradient(100deg,#fff1c6,#ffc66b,#fff6dc,#ffc66b,#fff1c6) 0 0/300% 100%}
-.fxg{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;max-width:1180px;margin:56px auto 0}
-.fx{position:relative;border-radius:26px;border:1px solid var(--ln);background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.015));padding:12px 12px 24px;overflow:hidden}
-.fx.wide{grid-column:1/-1}
-.fxt{display:inline-flex;align-items:center;gap:8px;margin:8px 8px 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#bdbdc6}
-.fxt b{width:7px;height:7px;border-radius:50%;background:var(--c,var(--a2));box-shadow:0 0 12px var(--c,var(--a2))}
-.demo{height:210px;border-radius:18px;background:#07070b;border:1px solid var(--ln);position:relative;overflow:hidden;display:grid;place-items:center;touch-action:pan-y}
-.fx h3{margin:18px 8px 6px;font-size:1.15rem;font-weight:600;letter-spacing:-.02em}.fx p{margin:0 8px;color:var(--mut);font-size:14px}
-.demo canvas{position:absolute;inset:0;width:100%;height:100%}
-/* decode */
-.dsc{font-weight:800;font-size:clamp(2rem,6.4vw,3.3rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap;background:var(--ir) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fw 7s linear infinite;filter:drop-shadow(0 0 22px color-mix(in srgb,var(--a2) 45%,transparent))}
-/* wave */
-.wvx{display:flex;font-weight:800;font-size:clamp(2rem,6.2vw,3.2rem);letter-spacing:-.03em;color:#fff}
-.wvx i{font-style:normal;display:inline-block;animation:wvl 2.2s ease-in-out infinite;animation-delay:calc(var(--n)*-140ms)}
-@keyframes wvl{0%,100%{transform:translateY(0);filter:blur(0);text-shadow:0 0 0 transparent}50%{transform:translateY(-16px) scale(1.12);filter:blur(2.5px);text-shadow:0 0 26px var(--a2),0 0 60px var(--a3)}}
-/* glitch */
-.gx{position:relative;font-weight:800;font-size:clamp(2rem,6.4vw,3.3rem);letter-spacing:-.03em;color:#fff;animation:gj 3.2s steps(1) infinite}
-.gx::before,.gx::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;mix-blend-mode:screen}
-.gx::before{color:#ff3dd8;animation:g1 3.2s steps(1) infinite}.gx::after{color:#27e6ff;animation:g2 3.2s steps(1) infinite}
-.demo:hover .gx,.demo:hover .gx::before,.demo:hover .gx::after{animation-duration:.7s}
-@keyframes gj{0%,84%,100%{transform:none}86%{transform:skewX(-14deg)}90%{transform:skewX(8deg) translateX(3px)}94%{transform:none}}
-/* lens */
-.lens{cursor:none}
-.ln{position:absolute;inset:-12px;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:2px 16px;font-weight:800;font-size:26px;line-height:1.15;letter-spacing:-.03em;text-transform:uppercase;background:linear-gradient(100deg,var(--a1),var(--a2),var(--a3),var(--a4)) 0 0/200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;overflow:hidden}
-.ln.b{filter:blur(7px);opacity:.75}
-.ln.s{-webkit-mask-image:radial-gradient(circle 64px at var(--lx,50%) var(--ly,50%),#000 72%,transparent 100%);mask-image:radial-gradient(circle 64px at var(--lx,50%) var(--ly,50%),#000 72%,transparent 100%)}
-.ring{position:absolute;left:var(--lx,50%);top:var(--ly,50%);width:132px;height:132px;margin:-66px 0 0 -66px;border-radius:50%;border:1px solid rgba(255,255,255,.35);box-shadow:0 0 40px color-mix(in srgb,var(--a2) 55%,transparent),inset 0 0 30px rgba(255,255,255,.12);pointer-events:none}
-/* focus pull */
-.fpd{position:relative}
-.fp{font-weight:700;font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:-.04em;animation:fpa 2.6s var(--e) infinite}
-@keyframes fpa{0%{filter:blur(30px);opacity:0;transform:scale(1.3)}25%,68%{filter:blur(0);opacity:1;transform:none}100%{filter:blur(30px);opacity:0;transform:scale(.82)}}
-.vf{position:absolute;inset:22px;pointer-events:none}.vf i{position:absolute;width:22px;height:22px;border:2px solid rgba(255,255,255,.5)}
-.vf i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}.vf i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}.vf i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}.vf i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
-.vf::after{content:"AF";position:absolute;right:0;bottom:-2px;font-size:10px;letter-spacing:.2em;color:#7dffb5;animation:cb 2.6s steps(1) infinite}
-/* depth glass */
-.dg i.bl{position:absolute;border-radius:50%;filter:blur(2px);animation:fl 9s ease-in-out infinite alternate}
-.dg .b1{width:120px;height:120px;left:12%;top:12%;background:var(--a1)}.dg .b2{width:90px;height:90px;right:14%;top:30%;background:var(--a3);animation-delay:-3s}.dg .b3{width:110px;height:110px;left:40%;bottom:-20px;background:var(--a2);animation-delay:-6s}
-.pn{position:absolute;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 20px 40px rgba(0,0,0,.35);-webkit-backdrop-filter:blur(var(--bk));backdrop-filter:blur(var(--bk));transform:translate3d(calc(var(--px,0)*var(--z)*1px),calc(var(--py,0)*var(--z)*1px),0)}
-.p1{--bk:3px;--z:-14;inset:18px 40px 40px 18px}.p2{--bk:10px;--z:12;inset:50px 18px 18px 80px}
-.p3{--bk:22px;--z:34;width:140px;height:68px;left:calc(50% - 70px);top:calc(50% - 34px);display:grid;place-items:center;font-weight:800;letter-spacing:.2em;font-size:15px}
-/* orbit glow */
-.orb2{display:grid;place-items:center}
-.ob{position:absolute;width:150px;height:150px;border-radius:50%;overflow:hidden;display:grid;place-items:center}
-.ob::before{content:"";position:absolute;inset:-60%;background:conic-gradient(from 0deg,transparent 0 40%,var(--a1),var(--a2),var(--a3),transparent);animation:spin 3s linear infinite}
-.ob::after{content:"";position:absolute;inset:3px;border-radius:50%;background:#07070b}
-.ob+b{position:relative;z-index:2;font-weight:800;font-size:1.5rem;letter-spacing:.14em;background:var(--ir) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fw 5s linear infinite}
-.orb2::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;box-shadow:0 0 70px 10px color-mix(in srgb,var(--a1) 55%,transparent);animation:glw 3s ease-in-out infinite}
-@keyframes glw{50%{box-shadow:0 0 120px 30px color-mix(in srgb,var(--a2) 60%,transparent);transform:scale(1.08)}}
-.od{position:absolute;width:190px;height:190px;animation:spin 5s linear infinite}
-.od::before{content:"";position:absolute;top:0;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:#fff;box-shadow:0 0 16px 5px var(--a2),0 0 50px 12px var(--a1)}
-.od.o2{width:118px;height:118px;animation-duration:3.2s;animation-direction:reverse}.od.o2::before{box-shadow:0 0 16px 5px var(--a3),0 0 50px 12px var(--a4);width:8px;height:8px;margin-left:-4px}
-/* shockwave */
-.sk{cursor:pointer}
-.sk>small{position:relative;z-index:2;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);pointer-events:none}
-.rg{position:absolute;width:340px;height:340px;border-radius:50%;pointer-events:none;border:2px solid #fff;box-shadow:0 0 34px var(--a2),inset 0 0 34px var(--a1);transform:translate(-50%,-50%) scale(0);animation:rg 1.6s var(--e) forwards}
-@keyframes rg{to{transform:translate(-50%,-50%) scale(1);opacity:0;filter:blur(6px)}}
-/* holo */
-.hl{height:330px;perspective:900px}
-.c3{position:relative;width:min(430px,82%);height:240px;border-radius:24px;transform-style:preserve-3d;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));background:linear-gradient(135deg,#14131f,#07070b);border:1px solid rgba(255,255,255,.22);box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 80px color-mix(in srgb,var(--a1) 35%,transparent);overflow:hidden}
-.foil{position:absolute;inset:0;background:conic-gradient(from calc(var(--hx,50)*3.6deg) at 50% 50%,var(--a1),var(--a2),var(--a3),var(--a4),var(--a1));mix-blend-mode:color-dodge;opacity:.5;-webkit-mask:repeating-linear-gradient(115deg,#000 0 2px,transparent 2px 9px);mask:repeating-linear-gradient(115deg,#000 0 2px,transparent 2px 9px)}
-.glare{position:absolute;inset:0;background:radial-gradient(260px circle at calc(var(--hx,50)*1%) calc(var(--hy,50)*1%),rgba(255,255,255,.4),transparent 60%);mix-blend-mode:overlay}
-.cin{position:absolute;inset:0;padding:26px;display:flex;flex-direction:column;justify-content:space-between;transform:translateZ(50px)}
-.cin small{font-size:11px;letter-spacing:.3em;color:#ffd98a;text-shadow:0 0 14px rgba(255,198,107,.7)}
-.cin strong{font-weight:800;font-size:clamp(2.2rem,8vw,3.6rem);letter-spacing:-.05em;line-height:1;background:linear-gradient(180deg,#fff,#a8a8b6);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cin span{font-size:13px;color:var(--mut);letter-spacing:.14em;text-transform:uppercase}
 </style></head><body>
 <div id="gate"><div class="gb gl" id="gb"><h2>Enter <span class="ir">password</span></h2><p>This site is protected.</p><input id="gp" type="password" placeholder="Password" autocomplete="off" autocapitalize="off"><button class="btn p" id="gx">Unlock</button><div class="er" id="ge"></div></div></div>
 
@@ -332,12 +264,12 @@ html.ion #intro{display:block}
 <div class="amb"><i style="left:-18vmax;top:-22vmax;--k:var(--a1)"></i><i style="right:-24vmax;top:4vh;--k:var(--a2);animation-delay:-9s"></i><i style="left:18vw;bottom:-38vmax;--k:var(--a3);animation-delay:-17s"></i></div>
 <div id="pg"></div>
 <nav class="gl"><a class="logo" href="#top"><i>Z</i>Zown</a>
-<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#showcase">Showcase</a><a href="#gui">Preview</a><a href="#fxology">Fxology</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
+<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#showcase">Showcase</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
 <a class="btn p sm mag" href="#get">Download</a></nav>
 <div class="dock gl"><span>Theme</span><div id="dk" style="display:flex;gap:6px"></div></div>
 <main>
 <section class="hero" id="top"><div class="orb"></div>
-<div class="hi"><div class="tag gl"><b></b>Zownium Newgen <span id="ver">v1.2.0</span> · Fabric 1.21.1 <em class="pr">Premium</em></div>
+<div class="hi"><div class="tag gl"><b></b>Zownium Newgen <span id="ver">v1.2.0</span> · Now available for 1.21.1 and 1.21.11 <em class="pr">Premium</em></div>
 <h1 data-s="Play beyond limits."></h1>
 <p class="sub">A full Nethpot suite, instant refillers, mace tools, a liquid glass GUI and performance modules that keep every fight smooth.</p>
 <div class="cta"><a class="btn p mag" href="#get">Download Zownium</a><a class="btn g mag" href="#nethpot">Explore Nethpot</a></div></div>
@@ -355,61 +287,15 @@ html.ion #intro{display:block}
 <section id="gui"><span class="eb rv">Live preview</span><h2 class="rv">Liquid glass <span class="ir">GUI.</span></h2>
 <p class="sub rv">Pick a tab and toggle modules. This is how it feels in game.</p>
 <div class="win gl rv"><div class="sb" id="sb"><p>Zownium</p></div><div class="ml" id="ml"></div></div></section>
-<section id="fxology"><span class="eb rv">Fxology</span><h2 class="rv">Effects you have <span class="ir">never seen.</span></h2>
-<p class="sub rv">Unique text animations, blur systems and living glow, built from scratch. Move your cursor, hover, click. Nothing here is a template.</p>
-<div class="fxb rv"><span>Made by Zown</span><span>Unseen</span><span class="pr">Premium only</span></div>
-<div class="fxg">
-
-<article class="fx rv" style="--i:0;--c:var(--a1)"><span class="fxt"><b></b>Text · Decode</span>
-<div class="demo"><div class="dsc" id="fd">ZOWNIUM</div></div>
-<h3>Signal decode</h3><p>Text scrambles out of noise and locks in letter by letter. Hover to re-decode.</p></article>
-
-<article class="fx rv" style="--i:1;--c:var(--a2)"><span class="fxt"><b></b>Text · Wave</span>
-<div class="demo"><div class="wvx" id="fw"></div></div>
-<h3>Liquid wave</h3><p>Every letter rides a phase-shifted wave with live blur and a glow that follows the crest.</p></article>
-
-<article class="fx rv" style="--i:2;--c:var(--a3)"><span class="fxt"><b></b>Text · Glitch</span>
-<div class="demo"><div class="gx" data-t="NEWGEN">NEWGEN</div></div>
-<h3>RGB tear</h3><p>Channel split and slice tears fire at random. Hover and it goes unstable.</p></article>
-
-<article class="fx rv" style="--i:0;--c:var(--a4)"><span class="fxt"><b></b>Blur · Lens</span>
-<div class="demo lens" id="fl"><div class="ln b"></div><div class="ln s"></div><div class="ring"></div></div>
-<h3>Liquid lens</h3><p>The world stays blurred. A glass lens follows you and pulls everything under it into focus.</p></article>
-
-<article class="fx rv" style="--i:1;--c:var(--a1)"><span class="fxt"><b></b>Blur · Focus pull</span>
-<div class="demo fpd"><div class="fp" id="ffp">Sharp.</div><div class="vf"><i></i><i></i><i></i><i></i></div></div>
-<h3>Rack focus</h3><p>Words snap out of heavy blur like a camera finding its subject.</p></article>
-
-<article class="fx rv" style="--i:2;--c:var(--a3)"><span class="fxt"><b></b>Blur · Depth glass</span>
-<div class="demo dg" id="fg"><i class="bl b1"></i><i class="bl b2"></i><i class="bl b3"></i><div class="pn p1"></div><div class="pn p2"></div><div class="pn p3">DEPTH</div></div>
-<h3>Layered glass</h3><p>Three glass panes with different blur strengths slide at different depths.</p></article>
-
-<article class="fx rv" style="--i:0;--c:var(--a2)"><span class="fxt"><b></b>Glow · Orbit</span>
-<div class="demo orb2"><div class="ob"></div><b>GLOW</b><div class="od"></div><div class="od o2"></div></div>
-<h3>Living orbit</h3><p>A breathing core with two light bodies orbiting in opposite directions.</p></article>
-
-<article class="fx rv" style="--i:1;--c:var(--a4)"><span class="fxt"><b></b>Glow · Spotlight</span>
-<div class="demo" id="fs"><canvas></canvas></div>
-<h3>Reactive grid</h3><p>A dot field that swells and lights up around your cursor, tinted by the active theme.</p></article>
-
-<article class="fx rv" style="--i:2;--c:var(--a1)"><span class="fxt"><b></b>Glow · Shockwave</span>
-<div class="demo sk" id="fk"><small>Click or tap</small></div>
-<h3>Pulse rings</h3><p>Click anywhere to send glowing rings out with a soft blur tail. They also fire on their own.</p></article>
-
-<article class="fx wide rv" style="--c:#ffc66b"><span class="fxt"><b></b>Unseen · Premium</span>
-<div class="demo hl" id="fh"><div class="c3"><div class="foil"></div><div class="glare"></div><div class="cin"><small>PREMIUM ONLY</small><strong>ZOWNIUM</strong><span>Made by Zown</span></div></div></div>
-<h3>Holo foil 3D</h3><p>A real-depth card with moving foil and a light source that tracks you. Built for the premium build only.</p></article>
-
-</div></section>
 <section id="modules"><span class="eb rv">Everything else</span><h2 class="rv">One client. <span class="ir">Every category.</span></h2><div class="cats" id="ct"></div></section>
 <section id="studio"><span class="eb rv">Make it yours</span><h2 class="rv">Your look. <span class="ir">Your client.</span></h2>
 <p class="sub rv">Pure black and white or full colour. Glass, glow and blur are adjustable and saved per profile.</p>
 <div class="grid" id="sd"></div></section>
 <section id="editions"><span class="eb rv">Choose your build</span><h2 class="rv">Made for <span class="ir">every device.</span></h2>
 <p class="sub rv">Pick the version that fits your hardware.</p>
-<div class="grid" id="ed" style="max-width:900px"></div></section>
+<div class="grid" id="ed" style="max-width:1180px"></div></section>
 <section class="fin" id="get"><div class="wm2 rv">Zown</div><h2 class="rv">Ready to <span class="ir">play beyond?</span></h2>
-<p class="req rv">Minecraft 1.21.1 · Fabric Loader · Fabric API · Java 21</p>
+<p class="req rv">Minecraft 1.21.1 and 1.21.11 · Fabric Loader · Fabric API · Java 21</p>
 <div class="tag gl rv" id="upd" style="margin:0 0 30px"><b></b><span id="ut"></span></div>
 <div class="cta rv"><a class="btn p mag" id="dl" href="#">Download Zownium Newgen v1.2.0</a><a class="btn g mag" href="#nethpot">See Nethpot modules</a></div>
 <div class="dev gl rv" style="margin-top:36px"><i>Z</i>Developed by <b>Zown</b></div></section>
@@ -421,6 +307,7 @@ const CFG={
  DOWNLOAD_URL:'#editions',      // direct jar link (file sits next to index.html) or paste any full link
  REPO:'',                 // public GitHub repo: newest .jar/.zip is picked AUTOMATICALLY (name, version, time)
  DL_HIGH:'https://github.com/zownfy/zownxnewgen/raw/main/ZowniumHighEndSecured.jar',    // download link for high end Device and PC (file next to index.html, or a full link)
+ DL_1211:'https://github.com/zownfy/zownxnewgen/raw/main/ZowniumNewgen1.21.11Secured.jar',   // download link for 1.21.11 build (Spear Mace modules), change the file name to yours
  DL_LOW:'https://github.com/zownfy/zownxnewgen/raw/main/ZowniumLowEndSecured.jar',      // download link for low end Device and PC
  VIDEO_REPO:'zownfy/zownxnewgen',                // GitHub repo "username/repo": every video inside VIDEO_DIR is added AUTOMATICALLY
  VIDEO_DIR:'videos',            // folder in that repo where you upload the videos
@@ -443,7 +330,7 @@ if(ok)open();else{
 const go=async()=>{let good=false;try{good=(await hs(g.value))===H}catch(_){e.textContent='Open this site over https.';return}
 if(good){try{sessionStorage.setItem('zk',H)}catch(_){}open(true)}else{e.textContent='Wrong password';g.value='';b.classList.remove('sk');void b.offsetWidth;b.classList.add('sk')}};
 $('#gx').onclick=go;g.onkeydown=ev=>{if(ev.key==='Enter')go()};setTimeout(()=>g.focus(),100)}}
-const IC={trig:'<circle cx="12" cy="12" r="6"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/>',bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',pot:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 14h8"/>',star:'<path d="m12 3 2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"/>',refill:'<path d="M20 11a8 8 0 0 0-14-4M4 5v4h4M4 13a8 8 0 0 0 14 4M20 19v-4h-4"/>',inv:'<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><path d="M16.5 13v7M13 16.5h7"/>',flame:'<path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/>',kb:'<path d="M4 20l6-6 4 4 6-8M15 10h5v5"/>',sprint:'<path d="M6 5l7 7-7 7M12 5l7 7-7 7"/>',pal:'<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 1.5-2-.6-1.2.2-2.5 1.5-2.5H17a4 4 0 0 0 4-4c0-5-4-9.5-9-9.5z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="11" r="1"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',layers:'<path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/>',wave:'<path d="M2 12c3-7 5-7 8 0s5 7 8 0 3-4 4-2"/>'};
+const IC={trig:'<circle cx="12" cy="12" r="6"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/>',bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',pot:'<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 14h8"/>',star:'<path d="m12 3 2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8z"/>',refill:'<path d="M20 11a8 8 0 0 0-14-4M4 5v4h4M4 13a8 8 0 0 0 14 4M20 19v-4h-4"/>',inv:'<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><path d="M16.5 13v7M13 16.5h7"/>',flame:'<path d="M12 2c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"/>',kb:'<path d="M4 20l6-6 4 4 6-8M15 10h5v5"/>',sprint:'<path d="M6 5l7 7-7 7M12 5l7 7-7 7"/>',pal:'<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 1.5-2-.6-1.2.2-2.5 1.5-2.5H17a4 4 0 0 0 4-4c0-5-4-9.5-9-9.5z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="11" r="1"/>',drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',layers:'<path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/>',spear:'<path d="M4 20 17 7"/><path d="M14 4l6 0 0 6-3-1-1-3z"/><path d="M6 14l4 4"/>',wave:'<path d="M2 12c3-7 5-7 8 0s5 7 8 0 3-4 4-2"/>'};
 const NP=[
 ['Goated Trigger Bot','trig','Combat','A trigger bot that behaves like a person. Reaction time is a mean plus a spread, hits wait for full charge, and it can hit-select, skip shields and respect your max reach. Mistake chance and follow-up jitter keep patterns natural.',['Reaction mean/spread','Max Reach','Crit Mode','Shield Mode','Only Mouse Hold']],
 ['Pika Tbot','bolt','Combat','Fast, configurable auto attack the moment your crosshair is on a target. Separate sword and axe thresholds, min/max reaction time, crit and perfect-crit preference, and it can ignore shields, passives, crystals and invisible targets.',['Sword/Axe thresholds','Reaction Time','Prefer Crits','Perfect Crits','Ignore Shields']],
@@ -480,7 +367,7 @@ L=L.concat(c.f.filter(x=>!L.some(y=>y.f===x.f)).map(norm))}catch(e){}}
 const play=i=>{const x=L[i];if(x.y)v.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(x.y)}?rel=0" title="${x.t||'Video'}" allow="accelerometer;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen loading="lazy"></iframe>`;else{v.innerHTML='<video controls playsinline preload="metadata"></video>';const e=$('video',v);e.src=encodeURI(x.f);if(x.u)e.onerror=()=>{e.onerror=null;e.src=x.u}}$$('.tb',l).forEach((b,j)=>b.classList.toggle('a',j==i))};
 if(!L.length)v.innerHTML='<p>Showcase video coming soon.</p>';else{if(L.length>1)L.forEach((x,i)=>{const b=document.createElement('button');b.className='tb';b.textContent=x.t||'Video '+(i+1);b.onclick=()=>play(i);l.appendChild(b)});play(0)}})();
 /* editions */
-const ED=[['For high end Device and PC, Now Optimized for Low-End PCs.','bolt','High end','Full experience with every visual effect, glow and animation turned on.',['Max visuals','Smooth animations','All modules'],'DL_HIGH','Download High End'],['For low end Device and PC','layers','Low end','Lightweight build tuned for steady FPS on weaker devices and older PCs.',['Better FPS','Light effects','All modules'],'DL_LOW','Download Low End']];
+const ED=[['For high end Device and PC, Now Optimized for Low-End PCs.','bolt','High end','Full experience with every visual effect, glow and animation turned on.',['Max visuals','Smooth animations','All modules'],'DL_HIGH','Download High End'],['For low end Device and PC','layers','Low end','Lightweight build tuned for steady FPS on weaker devices and older PCs.',['Better FPS','Light effects','All modules'],'DL_LOW','Download Low End'],['For 1.21.11 with New Spear Mace Modules','spear','1.21.11','Brand new build for Minecraft 1.21.11 with the new Spear and Mace modules, all combat tools and the full premium GUI.',['1.21.11','Spear modules','Mace modules'],'DL_1211','Download 1.21.11']];
 $('#ed').innerHTML=ED.map((x,i)=>`<article class="c rv" style="--c:${V(i*2)};--i:${i}"><div class="ico">${sv(x[1])}</div><span class="t"><b></b>${x[2]}</span><h3>${x[0]}</h3><p>${x[3]}</p><div class="ch">${x[4].map(c=>`<span>${c}</span>`).join('')}</div><a class="btn g mag" style="margin-top:24px" href="${CFG[x[5]]||'#get'}" download>${x[6]}</a></article>`).join('');
 /* gui */
 const sb=$('#sb'),ml=$('#ml');let st={};
@@ -625,38 +512,6 @@ setInterval(()=>{C4=TC()},600);
 /* tilt cards */
 addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest&&e.target.closest('.c');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*10+'deg');c.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg')}},{passive:true});
 document.addEventListener('pointerout',e=>{const c=e.target.closest&&e.target.closest('.c');if(c&&!c.contains(e.relatedTarget)){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')}})}
-
-/* ---------- Fxology demos ---------- */
-const drv=[];
-function drive(el,fn){const o={el,fn,x:.5,y:.5,tx:.5,ty:.5,h:false,vis:false,ph:Math.random()*6,w:1,hh:1};
- const rs=()=>{o.w=el.clientWidth||1;o.hh=el.clientHeight||1};rs();new ResizeObserver(rs).observe(el);
- el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();o.tx=(e.clientX-r.left)/r.width;o.ty=(e.clientY-r.top)/r.height;o.h=true});
- el.addEventListener('pointerleave',()=>{o.h=false});
- new IntersectionObserver(es=>o.vis=es[0].isIntersecting).observe(el);drv.push(o);return o}
-(function lp(t){requestAnimationFrame(lp);if(document.hidden)return;const s=t/1000;for(const o of drv){if(!o.vis)continue;if(!o.h){o.tx=.5+.36*Math.sin(s*.8+o.ph);o.ty=.5+.32*Math.sin(s*1.1+o.ph*1.7)}o.x+=(o.tx-o.x)*.12;o.y+=(o.ty-o.y)*.12;o.fn(o.x,o.y,o.w,o.hh)}})(0);
-/* decode */
-{const e=$('#fd'),W=['ZOWNIUM','UNSEEN','PREMIUM','NEWGEN','FXOLOGY'];let k=0,vis=false;const go=()=>{k=(k+1)%W.length;scr(e,W[k],900)};
- new IntersectionObserver(x=>vis=x[0].isIntersecting).observe(e);setInterval(()=>{if(vis)go()},2600);e.parentNode.addEventListener('pointerenter',go)}
-/* wave */
-sp($('#fw'),'SMOOTH');
-/* lens */
-{const t=[];for(let i=0;i<9;i++)t.push('<span>Zownium</span><span>Newgen</span><span>Unseen</span><span>Premium</span>');$$('#fl .ln').forEach(l=>l.innerHTML=t.join(''));
- const d=$('#fl');drive(d,(x,y,w,h)=>{d.style.setProperty('--lx',x*w+'px');d.style.setProperty('--ly',y*h+'px')})}
-/* focus pull */
-{const e=$('#ffp'),W=['Sharp.','Fast.','Unseen.','Premium.','Zown.'];let k=0;e.addEventListener('animationiteration',()=>{k=(k+1)%W.length;e.textContent=W[k]})}
-/* depth glass */
-{const d=$('#fg');drive(d,(x,y)=>{d.style.setProperty('--px',(x-.5)*2);d.style.setProperty('--py',(y-.5)*2)})}
-/* spotlight grid */
-{const d=$('#fs'),cv=$('canvas',d),g=cv.getContext('2d');let C=TC(),tk=0;
- const o=drive(d,(x,y,w,h)=>{const dp=Math.min(2,devicePixelRatio||1);if(cv.width!==(w*dp|0)){cv.width=w*dp;cv.height=h*dp}if(++tk%40===0)C=TC();
-  g.setTransform(dp,0,0,dp,0,0);g.clearRect(0,0,w,h);g.globalCompositeOperation='lighter';const px=x*w,py=y*h,S=20;
-  for(let i=S/2;i<w;i+=S)for(let j=S/2;j<h;j+=S){const dd=Math.hypot(i-px,j-py),k=Math.max(0,1-dd/120);g.fillStyle=k>0?C[(i/w*3.99)|0]:'#3a3a46';g.globalAlpha=k>0?.45+k*.55:.55;g.beginPath();g.arc(i,j,1.1+k*4,0,6.283);g.fill();if(k>.5){g.globalAlpha=(k-.5)*.25;g.beginPath();g.arc(i,j,9,0,6.283);g.fill()}}})}
-/* shockwave */
-{const d=$('#fk');const ring=(x,y)=>{for(let i=0;i<3;i++){const r=document.createElement('i');r.className='rg';r.style.left=x+'px';r.style.top=y+'px';r.style.animationDelay=i*.16+'s';r.style.borderColor=['#fff',TC()[1],TC()[2]][i];d.appendChild(r);setTimeout(()=>r.remove(),2200)}SFX.tick(2)};
- d.addEventListener('pointerdown',e=>{const r=d.getBoundingClientRect();ring(e.clientX-r.left,e.clientY-r.top)});
- let vis=false;new IntersectionObserver(x=>vis=x[0].isIntersecting).observe(d);setInterval(()=>{if(vis&&!d.matches(':hover'))ring(d.clientWidth*(.25+Math.random()*.5),d.clientHeight*(.25+Math.random()*.5))},2200)}
-/* holo */
-{const d=$('#fh'),c=$('.c3',d);drive(d,(x,y)=>{c.style.setProperty('--ry',(x-.5)*34+'deg');c.style.setProperty('--rx',(.5-y)*26+'deg');c.style.setProperty('--hx',x*100);c.style.setProperty('--hy',y*100)})}
 
 /* ---------- showcase: manual video list + native PiP ---------- */
 {const pb=document.createElement('div');pb.className='more rv';pb.innerHTML='<button class="btn sm" id="pipb" type="button">Picture-in-Picture</button>';$('#vl').after(pb);
