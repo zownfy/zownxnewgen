@@ -358,7 +358,7 @@ const CFG={
 /* =============================================================== */
 const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
 /* password gate (client side) */
-{const H='5393bd1588f1e7dce6c95075707d14598d8c53e0e99fa88ccbdf30a13d750ab0',g=$('#gp'),e=$('#ge'),b=$('#gb');
+{const H='0a5d06da3efc82069ceb33a3b0463fd7ee55b31e4b014b952e52fdf209656ab8',g=$('#gp'),e=$('#ge'),b=$('#gb');
 const hs=async t=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))].map(x=>x.toString(16).padStart(2,'0')).join('');
 let ok=false;try{ok=sessionStorage.getItem('zk')===H}catch(_){}
 const open=g=>{document.documentElement.classList.remove('locked');document.dispatchEvent(new CustomEvent('zopen',{detail:g}))};
