@@ -1,0 +1,1449 @@
+{
+  "formatVersion": 2,
+  "id": "d6758e38-5f8f-48cb-ab67-9021a18e933d",
+  "name": "default",
+  "description": "",
+  "createdAt": 1795574466779,
+  "modifiedAt": 1795599661818,
+  "client": {},
+  "modules": {
+    "Totem Hit": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Switch Delay": 30
+      }
+    },
+    "Trigger Bot": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Sword Threshold Max": 0.95,
+        "Sword Threshold Min": 0.9,
+        "Axe Threshold Max": 0.95,
+        "Axe Threshold Min": 0.9,
+        "Axe Post Max": 120,
+        "Axe Post Min": 120,
+        "Reaction Time Max": 95,
+        "Reaction Time Min": 20,
+        "No Passive": true,
+        "No Crystals": true,
+        "Ignore Shields": false,
+        "Prefer Crits": false,
+        "CritMin Cooldown": 0.9,
+        "No Invisible": true,
+        "Only Mouse Hold": false,
+        "Only Sword/Axe": true,
+        "Disable on Load": false,
+        "Same Player": false
+      }
+    },
+    "Velocity": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Chance (%)": 100,
+        "Ignore Containers": true,
+        "Ignore S press": true,
+        "Ignore on fire": true
+      }
+    },
+    "Shield Breaker": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Reaction Max MS": 555,
+        "Reaction Min MS": 545,
+        "Switch Max MS": 555,
+        "Switch Min MS": 545,
+        "Attack Max MS": 555,
+        "Attack Min MS": 545,
+        "Switch Back Max MS": 555,
+        "Switch Back Min MS": 545
+      }
+    },
+    "Throw Pot": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Throw Key": 71,
+        "Throw Delay": 250,
+        "Health Threshold": 10,
+        "Multi Throw": true,
+        "Low Health Threshold": 4,
+        "Low Health Pots": 2,
+        "Critical Health Threshold": 2,
+        "Critical Health Pots": 3,
+        "Pot Delay": 150,
+        "Auto Switch Back": true,
+        "Randomize Selection": false,
+        "Look Down": true,
+        "Rotate Back": true,
+        "Rotation Speed": 45
+      }
+    },
+    "Key Crystal": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Crystal Key": 3,
+        "Delay (MS)": 10,
+        "Anti Suicide": true
+      }
+    },
+    "Key Anchor": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Anchor Key": 88,
+        "Delay (MS)": 50,
+        "Restore Delay": 2
+      }
+    },
+    "Anti Miss": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "WTap": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Ms": 60,
+        "Chance (%)": 100
+      }
+    },
+    "STap": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Ms": 60,
+        "Chance (%)": 100
+      }
+    },
+    "Aim Assist": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Aim Mode": "Distance",
+        "Speed": 5,
+        "FOV": 90,
+        "Range": 4.5,
+        "Pitch Speed": 2,
+        "Yaw Speed": 2,
+        "Smoothing": 10,
+        "Steepness": 5,
+        "Noise Speed": 1.5,
+        "Target Players": true,
+        "Target Mobs": false,
+        "Weapons Only": false,
+        "Through Walls": false,
+        "Disable on target": false,
+        "Work only when RMB is pressed": false
+      }
+    },
+    "Sword Hotswap": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Hotswap Key": 1,
+        "Swap Delay (MS)": 150,
+        "Switch Back": true
+      }
+    },
+    "Auto Crystal": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Crystal Key": 3,
+        "Delay (MS)": 50,
+        "Anti Suicide": true,
+        "Auto Switch": true,
+        "Switch Back": true
+      }
+    },
+    "Auto Jump Reset": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Chance %": 100,
+        "Delay Ticks": 0,
+        "Only Moving Forward": true,
+        "Only Sprinting": false
+      }
+    },
+    "Trigger Bot Optimizer": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Humanize": true,
+        "Threshold Spread": 0.03,
+        "Ping Compensation": true,
+        "Ping Share %": 50,
+        "Re-roll Ticks": 40
+      }
+    },
+    "Auto Pot": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Health": 8,
+        "Delay": 300,
+        "Burst Pots": 1,
+        "Critical Health": 4,
+        "Look Down": true,
+        "Switch Back": true,
+        "Only Without Screen": true
+      }
+    },
+    "Throw Buff": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Throw Key": 72,
+        "Throw Delay": 0,
+        "Speed": true,
+        "Strength": true,
+        "Fire Resistance": false,
+        "Regeneration": false,
+        "Only If Missing": true,
+        "Refresh Below (sec)": 5,
+        "Switch Delay": 0,
+        "Auto Switch Back": true,
+        "Look Down": true,
+        "Rotate Back": true,
+        "Rotation Speed": 90
+      }
+    },
+    "Auto Shift Crit": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Chance %": 100,
+        "Timing": "Falling",
+        "Jump Hold Ticks": 4,
+        "Delay Ticks": 0,
+        "Shift Tap Ticks": 1,
+        "Only Moving Forward": false,
+        "Only Sprinting": false
+      }
+    },
+    "TriggerBot v2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Cooldown Min": 0.92,
+        "Cooldown Max": 1,
+        "Reaction Min ms": 15,
+        "Reaction Max ms": 60,
+        "Reaction Only On New Target": true,
+        "Max Target Hurt Time": 10,
+        "Crit Mode": "Off",
+        "Crit Wait ms": 350,
+        "Sword": true,
+        "Axe": true,
+        "Mace": true,
+        "Any Item": false,
+        "Shield Mode": "Axe Breaks",
+        "Players": true,
+        "Hostile Mobs": true,
+        "Passive Mobs": false,
+        "Invisible": true,
+        "Ignore Friends": true,
+        "Ignore Teammates": true,
+        "Only Mouse Hold": false,
+        "Pause While Using Item": true,
+        "Disable On World Change": false
+      }
+    },
+    "Weak Point Aim": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Point": "Auto",
+        "Random Drift %": 15,
+        "Drift Interval (ms)": 400,
+        "Nearest-Point Reach": 3.2
+      }
+    },
+    "Block Hit Timing": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Block Range": 4,
+        "Release After Swing (ticks)": 2,
+        "Max Block (ticks)": 30,
+        "Counter Hit": true,
+        "Counter Cooldown %": 90
+      }
+    },
+    "Combo Break Escape": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Hits To Trigger": 2,
+        "Combo Window (ms)": 1500,
+        "Chance %": 90,
+        "Strafe Ticks": 6,
+        "Attacker Range": 6
+      }
+    },
+    "Pika Tbot": {
+      "enabled": false,
+      "key": 331,
+      "settings": {
+        "Sword Threshold Max": 0.75,
+        "Sword Threshold Min": 0.74,
+        "Axe Threshold Max": 0.26,
+        "Axe Threshold Min": 0.21,
+        "Axe Post Max": 120,
+        "Axe Post Min": 119.5,
+        "Reaction Time Max": 95,
+        "Reaction Time Min": 20,
+        "Cooldown Mode": "Smart",
+        "Criticals": "Strict",
+        "Prefer Crits": true,
+        "Perfect Crits": true,
+        "No Passive": true,
+        "No Crystals": true,
+        "Ignore Shields": false,
+        "No Invisible": true,
+        "Only Mouse Hold": false,
+        "Only Sword or Axe": true,
+        "Disable on Load": false,
+        "Same Player": true
+      }
+    },
+    "Goated Trigger Bot": {
+      "enabled": true,
+      "key": -1,
+      "settings": {
+        "Reaction Mean ms": 125,
+        "Reaction Spread ms": 30,
+        "Cooldown Min": 0.94,
+        "Cooldown Max": 1,
+        "Follow-up Jitter ms": 45,
+        "Mistake Chance %": 3,
+        "Max Reach": 2.95,
+        "Max Target Hurt Time": 2,
+        "Crit Mode": "Prefer",
+        "Crit Wait ms": 260,
+        "Sword": true,
+        "Axe": true,
+        "Mace": true,
+        "Shield Mode": "Axe Breaks",
+        "Players": true,
+        "Hostile Mobs": false,
+        "Invisible": true,
+        "Ignore Friends": true,
+        "Ignore Teammates": true,
+        "Only Mouse Hold": false,
+        "Pause While Using Item": true,
+        "Disable On World Change": false
+      }
+    },
+    "Throw Pot v2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Throw Key": 71,
+        "Throw Delay": 50,
+        "Health Threshold": 10,
+        "Multi Throw": true,
+        "Low Health Threshold": 4,
+        "Low Health Pots": 2,
+        "Critical Health Threshold": 2,
+        "Critical Health Pots": 3,
+        "Pot Delay": 150,
+        "Auto Switch Back": true,
+        "Randomize Selection": false,
+        "Look Down": true,
+        "Rotate Back": true,
+        "Rotation Speed": 90,
+        "Finish Delay": 0,
+        "Restore Yaw": true,
+        "Cancel On Screen": true
+      }
+    },
+    "Flame Totem": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Trigger Hearts": 4,
+        "Restore Offhand": true,
+        "Restore On Heal": true,
+        "Predict Damage": true,
+        "Predict Max Hearts": 3,
+        "Gapple Fallback": true,
+        "Swap Method": "Packet"
+      }
+    },
+    "Sprint Optimizer": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Air / Falling Sprint": true,
+        "Landing Re-Sprint": true,
+        "Stuck Fix": true,
+        "Stuck Ticks": 6,
+        "Not In Water": true
+      }
+    },
+    "KB Jump Assist": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Auto Small Jump": true,
+        "Jump Height": 0.3,
+        "Jump Chance %": 100,
+        "Jump Delay Ticks": 0,
+        "Jump Jitter (t)": 1,
+        "Only Near Enemy": true,
+        "Enemy Range": 5,
+        "Head Block Check": true,
+        "Hit Mode": "Smart",
+        "Auto Hit": true,
+        "Hit Chance %": 95,
+        "Hit Jitter (t)": 1,
+        "Min Cooldown": 0.92,
+        "Close Range": 1.6,
+        "Retreat Speed": 0.06,
+        "Window Ticks": 16,
+        "Re-Sprint After": true
+      }
+    },
+    "Auto Mace": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Aim Mode": "Silent Aim",
+        "Aim Range": 15,
+        "Aim Speed": "Fast",
+        "Aim At": "Upper Body",
+        "Target Priority": "Nearest to Crosshair",
+        "Stop at Target Vert": true,
+        "Stop at Target Horiz": true,
+        "Attack Range": 3,
+        "Min Fall Distance": 2,
+        "Respect Cooldown": true,
+        "Stun Slam": true,
+        "Attack Delay (ticks)": 0,
+        "Switch Back": true
+      }
+    },
+    "Breach Swap": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Delay": 1,
+        "Switch Back": true,
+        "Only Breach": true,
+        "Only Sword": true
+      }
+    },
+    "Lunge Swap": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mode": "Keybind",
+        "Activate Key": -1,
+        "Repeat While Held": false,
+        "Switch Delay": 1,
+        "Switch Delay Random": 0,
+        "Switch to Windcharge": true,
+        "Switch Back Delay": 1,
+        "Switch Back Random": 0,
+        "Fallback to Previous": true,
+        "Success %": 100,
+        "Spear Priority": "Highest Lunge",
+        "Check Hunger": true,
+        "Min Hunger": 6,
+        "Cancel Below Hunger": false,
+        "Swing Hand": true
+      }
+    },
+    "Wind Charge Jump": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Trigger Mode": "Both",
+        "Aim Mode": "Silent Aim",
+        "Activate Key": -1,
+        "Min Pitch": 65,
+        "Ground Distance": 1.2,
+        "Ignore Containers": true,
+        "Auto Switch": true,
+        "Swap Back": true,
+        "Aim Speed": 12
+      }
+    },
+    "Wind Charge Key": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Wind Charge Key": 71,
+        "Switch Delay (MS)": 50,
+        "Throw Delay (MS)": 200,
+        "Silent": false,
+        "Auto Jump": true,
+        "Jump Delay (MS)": 10
+      }
+    },
+    "Elytra HotSwap": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Hotswap Key": 71,
+        "Swap Delay (MS)": 150,
+        "Auto Switch Back": true,
+        "Silent Swap": true,
+        "Toggle Mode": true
+      }
+    },
+    "Auto Pearl Catch": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Activate Key": -1,
+        "Mode": "Pearl + Wind",
+        "Throw Delay": 1,
+        "Max Wait": 4,
+        "Wind Aim": "Pearl Lead",
+        "Aim Lead": 1,
+        "Pearl Pitch": -90,
+        "Restore Aim": true,
+        "Switch Back": true,
+        "Cooldown Ticks": 0,
+        "Chase Range": 48,
+        "Chase Ticks": 120,
+        "Min Fall": 1.5,
+        "Chat Messages": true
+      }
+    },
+    "Auto Mace V2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mode": "Density",
+        "Wind Charge Launch": true,
+        "Launch Range": 6,
+        "Attack Range": 3,
+        "Density Height": 7,
+        "Breach Min Fall": 1.5,
+        "Stun Slam (Axe)": true,
+        "Respect Cooldown": true,
+        "Silent Aim": true,
+        "Switch Back": true,
+        "Switch Back Delay (ticks)": 2
+      }
+    },
+    "Mace Swap V2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Weapon Only": true,
+        "Not On Axe": true,
+        "Only On Ground": false,
+        "No Density": false,
+        "No Breach": false,
+        "Density Height": 3,
+        "Smart Health": false,
+        "Enemy Health": 6,
+        "Swap Back": true,
+        "Swap Back Delay (ticks)": 2
+      }
+    },
+    "Pearl Catch V2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Activate Key": 86,
+        "Mode": "Instant",
+        "Pearl Pitch (Horizontal)": 0,
+        "Throw Delay (ms, Auto)": 150,
+        "Max Catch Ticks": 18,
+        "Restore Aim": true,
+        "Swap Back": true
+      }
+    },
+    "Stun Slam V2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Range": 3,
+        "Min Fall Distance": 1.5,
+        "Min Switch Ticks": 1,
+        "Max Switch Ticks": 2,
+        "Min Attack Ticks": 1,
+        "Max Attack Ticks": 2,
+        "Silent Aim": true,
+        "Switch Back": true
+      }
+    },
+    "Fall Cancel Pearl": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Min Fall Distance": 12,
+        "Trigger Height": 10,
+        "Cooldown (ms)": 1500
+      }
+    },
+    "Auto Respawn": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Delay (ms)": 200
+      }
+    },
+    "Auto Eat": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Eat Below": 14
+      }
+    },
+    "Anti AFK": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Interval (s)": 30,
+        "Jump": true,
+        "Swing": true,
+        "Look Around": true
+      }
+    },
+    "Dynamic FPS": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Unfocused FPS": 10
+      }
+    },
+    "Fast Join": {
+      "enabled": true,
+      "key": -1,
+      "settings": {
+        "Auto Login": true,
+        "Auto Register": true,
+        "Solve Chat CAPTCHA": true,
+        "Chat Feedback": true,
+        "Delay (ms)": 700,
+        "Max Attempts": 3
+      }
+    },
+    "Auto Skin": {
+      "enabled": true,
+      "key": -1,
+      "settings": {
+        "Run After": "Register + Login",
+        "Delay (ms)": 1500,
+        "Chat Feedback": true
+      }
+    },
+    "Memory Cleaner": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Heap Threshold %": 75,
+        "Min Interval (sec)": 120,
+        "Only In Menus": true,
+        "Chat Notice": false
+      }
+    },
+    "Coords HUD": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "X Offset": 6,
+        "Y Offset": 60,
+        "Show Nether/Overworld": true
+      }
+    },
+    "Armor HUD": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Anchor": "Bottom Right",
+        "Layout": "Vertical",
+        "Display": "Number",
+        "Color": "Durability",
+        "Show Main Hand": false,
+        "Show Off Hand": false,
+        "Durability Bar": true,
+        "Background": true,
+        "Text Shadow": true,
+        "Flash When Low": true,
+        "Warn Below %": 15,
+        "X Offset": 6,
+        "Y Offset": 40,
+        "Scale": 1
+      }
+    },
+    "Health Indicator": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mode": "Target",
+        "Show Name": true,
+        "Show Bar": true,
+        "Show Absorption": true,
+        "Players Only": false,
+        "Keep After Look (s)": 2,
+        "Target Y Offset": 24,
+        "Self X": 6,
+        "Self Y": 60
+      }
+    },
+    "Item Counter": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Totems": true,
+        "Golden Apples": true,
+        "Ender Pearls": true,
+        "End Crystals": false,
+        "Wind Charges": true,
+        "XP Bottles": false,
+        "Hide Zero": false,
+        "Anchor": "Top Left",
+        "Layout": "Vertical",
+        "Background": true,
+        "X Offset": 6,
+        "Y Offset": 90,
+        "Scale": 1
+      }
+    },
+    "Pot Counter": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Health": true,
+        "Speed": true,
+        "Strength": true,
+        "Anchor": "Bottom Right",
+        "X Offset": 8,
+        "Y Offset": 60
+      }
+    },
+    "Enemy Pattern Tracker": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Track Range": 8,
+        "Sample Size": 8,
+        "Show Name": true,
+        "Show Swings/sec": true,
+        "Show Avg Gap": true,
+        "Show Next Swing": true,
+        "Show Safe Window": true,
+        "Background": true,
+        "Background Opacity": 135,
+        "Anchor": "Top Right",
+        "X Offset": 8,
+        "Y Offset": 60
+      }
+    },
+    "Gap Warning": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Warn At": 3,
+        "On-Screen Text": true,
+        "Sound": true,
+        "Chat Message": false,
+        "Y Offset": 40
+      }
+    },
+    "Totem Warning": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Warn At": 1,
+        "On-Screen Text": true,
+        "Sound": true,
+        "Chat Message": false,
+        "Y Offset": 40
+      }
+    },
+    "Low Health Alert": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Health Below": 6,
+        "Red Vignette": true,
+        "Sound": true,
+        "Strength": 0.6
+      }
+    },
+    "Auto Log": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Health At/Below": 4,
+        "Count Absorption": true,
+        "Only If Player Nearby": false,
+        "Nearby Range": 24,
+        "Disable After Log": true
+      }
+    },
+    "Pot Warning": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Warn Below": 3
+      }
+    },
+    "Sprint": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "NoJumpDelay": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "Keep Sprint": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Chance (%)": 100
+      }
+    },
+    "Auto Firework": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Only When Flying": true,
+        "Respect Gapples": true,
+        "Respect Armor": true,
+        "Auto Switch Back": true,
+        "Switch Back Delay": 100,
+        "Silent": false
+      }
+    },
+    "Auto Head Hitter": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Jump Delay": 100
+      }
+    },
+    "Snap Tap": {
+      "enabled": false,
+      "key": 297,
+      "settings": {
+        "Left / Right (A+D)": true,
+        "Forward / Back (W+S)": true,
+        "Chat Notify": true
+      }
+    },
+    "Auto Extinguish": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Max MS": 250,
+        "Min MS": 330,
+        "Pick up after": false,
+        "Rotate back": false,
+        "Goto prev-slot": false
+      }
+    },
+    "Auto Tool": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Switch Delay": 5,
+        "Switch For Combat": true,
+        "Return To Previous": true,
+        "Intelligent Switching": true,
+        "Only When Sneaking": false,
+        "Prevent Low Durability": true,
+        "Durability Threshold": 10
+      }
+    },
+    "Auto Web": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Web Key": 90,
+        "Web Count": 3,
+        "Click Delay (MS)": 50,
+        "Randomize Delay": true,
+        "Auto Switch Back": true
+      }
+    },
+    "Auto Refill": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Refill Key": 82,
+        "Refill Delay": 150,
+        "Reaction Delay Min": 200,
+        "Reaction Delay Max": 500,
+        "Min Stack Count": 16,
+        "Close Inventory After": true,
+        "Only When Sneaking": false,
+        "Hover Mode": false,
+        "Hover Delay Min": 100,
+        "Hover Delay Max": 300,
+        "Refill Instant Health": true,
+        "Refill Regeneration": true,
+        "Refill Strength": false,
+        "Refill Speed": false
+      }
+    },
+    "Auto Drain": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Cooldown MS": 250,
+        "SwitchBack MS": 75
+      }
+    },
+    "Auto Crafter": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Swords": true,
+        "Pickaxes": true,
+        "Axes": true,
+        "Shovels": true,
+        "Helmets": true,
+        "Chestplates": true,
+        "Leggings": true,
+        "Boots": true,
+        "Golden Apples": true,
+        "Craft Delay": 100
+      }
+    },
+    "Fast Place": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Blocks Only": true,
+        "Delay": 0
+      }
+    },
+    "Fast Exp": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Chance %": 75
+      }
+    },
+    "FastXP v2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Delay": 1,
+        "Chance": 100,
+        "Click Simulation": true
+      }
+    },
+    "Eagle": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Only work while holding shift": false
+      }
+    },
+    "Trap Save": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Scan Radius": 8,
+        "Scan Height": 8,
+        "Max Expansion": 20,
+        "Sound Alert": true,
+        "Show Warning": true,
+        "Outline Width": 2,
+        "TNT Color": 16753920,
+        "Redstone Color": 16711680,
+        "Piston Color": 9127187,
+        "Lever Color": 16776960,
+        "Armor Stand Color": 65535
+      }
+    },
+    "Ping Spoof": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Ms": 60
+      }
+    },
+    "Auto Double Hand": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Inventory Switch": true,
+        "Height Switch": true,
+        "Height Threshold": 3,
+        "Health Switch": true,
+        "Health Threshold": 6
+      }
+    },
+    "Fast Mine": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Speed": 5
+      }
+    },
+    "Pot Refill": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Delay": 90,
+        "Keep In Hotbar": 5,
+        "Close Inventory After": true
+      }
+    },
+    "Auto Buffs Refill": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mode": "Inventory Open",
+        "Delay": 60,
+        "Replace Occupied": false,
+        "Close Inventory After": true,
+        "Speed": true,
+        "Speed Slot": 7,
+        "Strength": true,
+        "Strength Slot": 8,
+        "Fire Resistance": false,
+        "Fire Res Slot": 9,
+        "Regeneration": false,
+        "Regen Slot": 6
+      }
+    },
+    "All Refiller": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mode": "Inventory Open",
+        "Refill Key": -1,
+        "Replace Wrong Items": true,
+        "Close Inventory After": false,
+        "Sword Slot": 1,
+        "Totem Slot": 2,
+        "No Totem: Use Health Pot": true,
+        "Health Slot 1": 3,
+        "Health Slot 2": 4,
+        "XP Slot": 5,
+        "No XP: Use Health Pot": true,
+        "Health Slot 3": 6,
+        "Health Slot 4": 7,
+        "Strength Slot": 8,
+        "Speed Slot": 9,
+        "Fire Res Slot": 0,
+        "Regen Slot": 0
+      }
+    },
+    "Mend Helper": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mend Key": -1,
+        "Preset": "Custom",
+        "Mend Helmet": true,
+        "Mend Chestplate": true,
+        "Mend Leggings": true,
+        "Mend Boots": true,
+        "First Mend Helmet Dura": 407,
+        "First Mend Chestplate Dura": 450,
+        "First Mend Leggings Dura": 450,
+        "First Mend Boots Dura": 450,
+        "Second Mend": true,
+        "Second Mend Helmet Dura": 600,
+        "Second Mend Chestplate Dura": 600,
+        "Second Mend Leggings Dura": 600,
+        "Second Mend Boots Dura": 600,
+        "Helmet/Boots Priority %": 15,
+        "Bottles Per Throw": 1,
+        "Throw Delay Ticks": 2,
+        "Click Delay Ticks": 1,
+        "Open Inventory": true,
+        "Equip On Hit": true,
+        "Auto Start Below %": 0,
+        "Status Messages": true,
+        "Show Status HUD": true,
+        "HUD X": 6,
+        "HUD Y": 130
+      }
+    },
+    "Mend Helper v2": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mend Key": -1,
+        "Order": "Smart",
+        "Stage 1 Goal %": 90,
+        "Stage 2": true,
+        "Stage 2 Goal %": 100,
+        "Mend Helmet": true,
+        "Mend Chestplate": true,
+        "Mend Leggings": true,
+        "Mend Boots": true,
+        "Helmet/Boots Bias %": 15,
+        "Bottles Per Throw": 1,
+        "Throw Every Ticks": 2,
+        "Extra Confirm Ticks": 1,
+        "Open Inventory": true,
+        "Cancel On Hit": true,
+        "Auto Start Below %": 0,
+        "Messages": true,
+        "Status HUD": true,
+        "HUD X": 6,
+        "HUD Y": 130
+      }
+    },
+    "Mend Helper v3": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mend Key": -1,
+        "Speed": "Fast",
+        "Equip Full Armour On Cancel": true,
+        "Helmet Goal %": 100,
+        "Chestplate Goal %": 100,
+        "Leggings Goal %": 100,
+        "Boots Goal %": 100,
+        "Mend Helmet": true,
+        "Mend Chestplate": true,
+        "Mend Leggings": true,
+        "Mend Boots": true,
+        "Low Gap % (go first)": 15,
+        "Critical % (go first)": 25,
+        "Precise Mode Below (dura)": 60,
+        "Settle Ticks": 14,
+        "Est. Repair / Bottle": 14,
+        "Low XP Spread": "Auto",
+        "Spread Step %": 10,
+        "Anticheat Safe": true,
+        "Wait Until Still": true,
+        "Bottles Per Throw": 1,
+        "Throw Every Ticks": 2,
+        "Extra Confirm Ticks": 1,
+        "Open Inventory": true,
+        "Cancel On Hit": true,
+        "Auto Start Below %": 0,
+        "Messages": true,
+        "Status HUD": true,
+        "HUD X": 6,
+        "HUD Y": 130
+      }
+    },
+    "Auto Totem": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Delay Ticks": 1,
+        "Only Below Health": 20,
+        "Prefer Hotbar Totems": false
+      }
+    },
+    "Gap Assist": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Hold Until Done": true,
+        "Lock Hotbar Slot": true,
+        "No Use Delay": true,
+        "Resume Sprint": true,
+        "Any Food": false,
+        "Max Hold Ticks": 45
+      }
+    },
+    "Container Slots": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Font": "Inter",
+        "Color": "#0F73E1",
+        "Highlight Totem": false,
+        "Highlight Color": "#FFE100",
+        "Disable Text": false
+      }
+    },
+    "Full Bright": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "HUD": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Watermark": true,
+        "Watermark Mode": "Simple",
+        "Watermark Text": "Zownium",
+        "Watermark Font": "MC",
+        "Watermark Scale": 1,
+        "ArrayList": true,
+        "ArrayList Scale": 1,
+        "Color Mode": "Astolfo",
+        "Custom Color": "#FFFFFF",
+        "ArrayList Font": "MC",
+        "Suffix": "Space",
+        "Hide visuals": true,
+        "Lowercase": false,
+        "Backbar Mode": "None",
+        "Offset": 5,
+        "BG Opacity": 80,
+        "Info": true,
+        "BPS": true,
+        "FPS": true,
+        "Scale": 1
+      }
+    },
+    "Player ESP": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Mode": "Outline",
+        "Line Width": 2,
+        "Color": "#FF6464",
+        "Through Walls": true,
+        "Show Self": false,
+        "Team Check": false,
+        "Range": 100
+      }
+    },
+    "Swing Speed": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Swing Speed": 12
+      }
+    },
+    "Ore ESP": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Render Mode": "Outline",
+        "Scan Radius": 32,
+        "Scan Height": 16,
+        "Outline Width": 2,
+        "Through Walls": true,
+        "Transparency": 0.5,
+        "Enable Diamond": true,
+        "Enable Emerald": true,
+        "Enable Gold": true,
+        "Enable Iron": true,
+        "Enable Coal": true,
+        "Enable Copper": true,
+        "Enable Redstone": true,
+        "Enable Lapis": true,
+        "Enable Netherite": false,
+        "Enable Nether Gold": false,
+        "Enable Nether Quartz": false
+      }
+    },
+    "Trajectory": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Show Pearls": true,
+        "Show Bows": true,
+        "Show Landing Point": true
+      }
+    },
+    "FPS Counter": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "X Position": 10,
+        "Y Position": 10,
+        "Background Opacity": 120,
+        "Corner Radius": 6
+      }
+    },
+    "FPS Boost": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Render Distance": 8,
+        "Simulation Distance": 6,
+        "Fast Graphics": true,
+        "Clouds Off": true,
+        "Minimal Particles": true,
+        "Entity Shadows Off": true,
+        "Smooth Lighting Off": true,
+        "Biome Blend Off": true,
+        "Entity Distance %": 60,
+        "Mipmaps Off": false,
+        "View Bobbing Off": false,
+        "Unlimited FPS": false,
+        "VSync Off": true
+      }
+    },
+    "Render Optimizer": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Target FPS": 90,
+        "Min Distance": 5,
+        "Max Distance": 12,
+        "Check Every (sec)": 3
+      }
+    },
+    "Lag Guard": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Min FPS": 60,
+        "Deep Mode (distance)": false,
+        "Pause Motion Blur": true
+      }
+    },
+    "Perf Mode": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Preset": "Max FPS",
+        "FPS Cap": 90,
+        "Adaptive Distance": false
+      }
+    },
+    "Motion Blur": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Strength": 55,
+        "Dynamic": true,
+        "Turn Sensitivity": 55,
+        "Blur Movement": true
+      }
+    },
+    "Effect Timers": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "X Offset": 6,
+        "Y Offset": 90,
+        "Warn Below Sec": 10,
+        "Show Level": true
+      }
+    },
+    "Fight Mode FPS": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Trigger Range": 12,
+        "Hold (sec)": 4,
+        "Minimal Particles": true,
+        "No Entity Shadows": true,
+        "No Clouds": true,
+        "Entity Distance %": 70
+      }
+    },
+    "Particle Limiter": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Max Distance": 24,
+        "Hide Totem Pop": false,
+        "Hide Hit / Crit": false,
+        "Hide Potion Swirls": true
+      }
+    },
+    "Cart Key": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Key": 67,
+        "Delay": 150,
+        "Silent": true,
+        "Switch Back": true,
+        "Switch Delay": 250,
+        "Auto Bow": true,
+        "Bow Window": 1000
+      }
+    },
+    "Hover Totem": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Min MS": 200,
+        "Max MS": 400,
+        "Ignore Offhand": false
+      }
+    },
+    "Middle Click Friend": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "Pearl Key": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Pearl Key": 80,
+        "Switch Delay (MS)": 50,
+        "Throw Delay (MS)": 1000,
+        "Silent": false
+      }
+    },
+    "Teams": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "Fake Player": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    },
+    "Click Gui": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Scale": "Small"
+      }
+    },
+    "Client": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Title": true,
+        "GUI Style": "Minimal",
+        "Sound Effects": true,
+        "Sound Volume": 0.6,
+        "Sound Pack": "Glass",
+        "Scroll Sound": true,
+        "Swipe Sound": true,
+        "On/Off Sound": true,
+        "Auto Performance": true,
+        "GUI Performance": "Medium",
+        "Reduced Motion": false,
+        "Light Mode (FPS)": false,
+        "GUI Glow": true,
+        "Glow Quality": "Medium",
+        "GUI Blur": true,
+        "Blur Intensity": 40,
+        "Glow Intensity": 55,
+        "Text Glow": false,
+        "Corner Roundness": 100,
+        "Animation Speed": 100,
+        "GUI Layout": "Sidebar",
+        "Window Frame": "Glass",
+        "Tab Style": "Pill",
+        "Module Rows": "Card"
+      }
+    },
+    "Panic": {
+      "enabled": false,
+      "key": -1,
+      "settings": {
+        "Disable Modules": true
+      }
+    },
+    "Debugger": {
+      "enabled": false,
+      "key": -1,
+      "settings": {}
+    }
+  }
+}
