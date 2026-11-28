@@ -223,6 +223,19 @@ html.ion #intro{display:block}
  .fts{align-items:center}.ft{flex-wrap:wrap;justify-content:center}
 }
 
+
+/* configs */
+.cft{max-width:1180px;margin:44px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cft input{width:min(380px,100%);padding:14px 22px;border-radius:99px;border:1px solid var(--ln);background:rgba(255,255,255,.06);color:var(--fg);font:500 15px 'Inter Tight',system-ui,sans-serif;outline:0}.cft input:focus{border-color:var(--a2)}
+.cft .btn{cursor:pointer}
+.cfl{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,300px));justify-content:center;gap:14px;max-width:1180px;margin:22px auto 0}
+.cf{display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:22px;border:1px solid var(--ln);background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.015));animation:rv .8s var(--e) calc(var(--i)*45ms) backwards;transition:transform .4s var(--e),border-color .3s}
+.cf:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.28)}
+.cf .ico{width:46px;height:46px;border-radius:14px}.cf .ico svg{width:22px;height:22px}
+.cf h3{font-weight:600;font-size:1.05rem;letter-spacing:-.02em;word-break:break-word}
+.cf small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.cf .btn{margin-top:auto;justify-content:center;cursor:pointer;width:100%}
+.cfe{grid-column:1/-1;text-align:center;color:var(--mut);padding:36px 12px}
 </style></head><body>
 <div id="gate"><div class="gb gl" id="gb"><h2>Enter <span class="ir">password</span></h2><p>This site is protected.</p><input id="gp" type="password" placeholder="Password" autocomplete="off" autocapitalize="off"><button class="btn p" id="gx">Unlock</button><div class="er" id="ge"></div></div></div>
 
@@ -264,7 +277,7 @@ html.ion #intro{display:block}
 <div class="amb"><i style="left:-18vmax;top:-22vmax;--k:var(--a1)"></i><i style="right:-24vmax;top:4vh;--k:var(--a2);animation-delay:-9s"></i><i style="left:18vw;bottom:-38vmax;--k:var(--a3);animation-delay:-17s"></i></div>
 <div id="pg"></div>
 <nav class="gl"><a class="logo" href="#top"><i>Z</i>Zown</a>
-<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#showcase">Showcase</a><a href="#gui">Preview</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
+<div class="lk" id="lk"><span class="ind"></span><a href="#nethpot">Nethpot</a><a href="#showcase">Showcase</a><a href="#gui">Preview</a><a href="#configs">Configs</a><a href="#modules">Modules</a><a href="#studio">Studio</a></div>
 <a class="btn p sm mag" href="#get">Download</a></nav>
 <div class="dock gl"><span>Theme</span><div id="dk" style="display:flex;gap:6px"></div></div>
 <main>
@@ -291,6 +304,10 @@ html.ion #intro{display:block}
 <section id="studio"><span class="eb rv">Make it yours</span><h2 class="rv">Your look. <span class="ir">Your client.</span></h2>
 <p class="sub rv">Pure black and white or full colour. Glass, glow and blur are adjustable and saved per profile.</p>
 <div class="grid" id="sd"></div></section>
+<section id="configs"><span class="eb rv">Configs</span><h2 class="rv">Ready made <span class="ir">configs.</span></h2>
+<p class="sub rv">Download a config and import it from the Client Profiles tab.</p>
+<div class="cft rv"><input id="cfq" type="search" placeholder="Search configs" autocomplete="off"><button class="btn sm" id="cfr" type="button">Refresh</button></div>
+<div class="cfl" id="cfl"></div></section>
 <section id="editions"><span class="eb rv">Choose your build</span><h2 class="rv">Made for <span class="ir">every device.</span></h2>
 <p class="sub rv">Pick the version that fits your hardware.</p>
 <div class="grid" id="ed" style="max-width:1180px"></div></section>
@@ -307,7 +324,7 @@ const CFG={
  DOWNLOAD_URL:'#editions',      // direct jar link (file sits next to index.html) or paste any full link
  REPO:'',                 // public GitHub repo: newest .jar/.zip is picked AUTOMATICALLY (name, version, time)
  DL_HIGH:'https://github.com/zownfy/zownxnewgen/raw/main/ZowniumHighEndSecured.jar',    // download link for high end Device and PC (file next to index.html, or a full link)
- DL_1211:'https://github.com/zownfy/zownxnewgen/raw/main/zownxnewgen1.21.11.jar',   // download link for 1.21.11 build (Spear Mace modules), change the file name to yours
+ DL_1211:'https://github.com/zownfy/zownxnewgen/raw/main/ZowniumNewgen1.21.11Secured.jar',   // download link for 1.21.11 build (Spear Mace modules), change the file name to yours
  DL_LOW:'https://github.com/zownfy/zownxnewgen/raw/main/ZowniumLowEndSecured.jar',      // download link for low end Device and PC
  VIDEO_REPO:'zownfy/zownxnewgen',                // GitHub repo "username/repo": every video inside VIDEO_DIR is added AUTOMATICALLY
  VIDEO_DIR:'videos',            // folder in that repo where you upload the videos
@@ -316,6 +333,8 @@ const CFG={
   // 'AutoTotem.mp4',
   // {y:'dQw4w9WgXcQ', t:'Full review'},   // YouTube video (t = title, optional for files)
  ],
+ CONFIG_REPO:'zownfy/zownxnewgen',   // GitHub repo "username/repo" where your configs are
+ CONFIG_DIR:'configs',                // folder in that repo: every file inside is listed automatically
  VERSION:'v1.2.0',                          // shown in hero + download button
  UPDATED_AT:'2026-11-24T12:00:00Z'          // set this when you release an update (ISO date-time)
 };
@@ -517,4 +536,24 @@ document.addEventListener('pointerout',e=>{const c=e.target.closest&&e.target.cl
 {const pb=document.createElement('div');pb.className='more rv';pb.innerHTML='<button class="btn sm" id="pipb" type="button">Picture-in-Picture</button>';$('#vl').after(pb);
  if(!document.pictureInPictureEnabled)pb.style.display='none';
  $('#pipb').onclick=async()=>{const v=$('#vid video');if(!v)return;try{if(document.pictureInPictureElement)await document.exitPictureInPicture();else{if(v.paused)await v.play().catch(()=>{});await v.requestPictureInPicture()}}catch(e){}}}
+
+/* ---------- configs from GitHub ---------- */
+(()=>{const L=$('#cfl'),Q=$('#cfq'),R=CFG.CONFIG_REPO,D=(CFG.CONFIG_DIR||'configs').replace(/^\/+|\/+$/g,'');let all=[];
+const nice=f=>f.replace(/\.[^.]+$/,'').replace(/[_-]+/g,' ').trim();
+const sz=b=>b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(1)+' MB';
+const ext=f=>(f.split('.').pop()||'').toUpperCase();
+const IC2='<svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg>';
+async function dl(x,b){const t=b.textContent;b.textContent='Downloading...';try{const r=await fetch(x.u);if(!r.ok)throw 0;const bl=await r.blob(),a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download=x.n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),6000);b.textContent='Downloaded'}catch(e){window.open(x.u,'_blank');b.textContent=t}setTimeout(()=>b.textContent=t,2200)}
+function draw(){const q=Q.value.trim().toLowerCase(),f=all.filter(x=>x.n.toLowerCase().includes(q));
+ if(!f.length){L.innerHTML=`<div class="cfe">${all.length?'No config found.':'No configs yet. Upload files to the <b>'+D+'</b> folder of your GitHub repo.'}</div>`;return}
+ L.innerHTML='';f.forEach((x,i)=>{const d=document.createElement('article');d.className='cf';d.style.setProperty('--i',i%12);d.style.setProperty('--c',`var(--a${i%4+1})`);
+ d.innerHTML=`<div class="ico">${IC2}</div><div><h3></h3><small>${ext(x.n)} · ${sz(x.s)}</small></div><button class="btn p sm" type="button">Download</button>`;
+ $('h3',d).textContent=nice(x.n);$('button',d).onclick=ev=>dl(x,ev.currentTarget);L.appendChild(d)})}
+async function load(force){L.innerHTML='<div class="cfe">Loading configs...</div>';
+ try{let c=null;try{c=JSON.parse(sessionStorage.getItem('zc'))}catch(e){}
+ if(force||!c||c.k!==R+'/'+D||Date.now()-c.t>3e5){const r=await fetch(`https://api.github.com/repos/${R}/contents/${D}`);if(r.status===404){all=[];draw();return}const f=await r.json();if(!Array.isArray(f))throw 0;
+  c={k:R+'/'+D,t:Date.now(),f:f.filter(x=>x.type==='file'&&!/^(readme|\.git)/i.test(x.name)).map(x=>({n:x.name,s:x.size,u:x.download_url}))};try{sessionStorage.setItem('zc',JSON.stringify(c))}catch(e){}}
+ all=c.f.sort((a,b)=>a.n.localeCompare(b.n,undefined,{numeric:true}));draw()}
+ catch(e){L.innerHTML='<div class="cfe">Could not load configs right now. Try Refresh in a moment.</div>'}}
+Q.oninput=draw;$('#cfr').onclick=()=>load(true);load()})();
 </script></body></html>
